@@ -67,8 +67,8 @@ string LZW::Encode(string& source)
 }
 
 string LZW::GetKey(int x)
-{
-    for (auto it = relation.begin(); it != relation.end(); it++) { //迭代器遍历map
+{//迭代器遍历map，采用C++11的auto写法自动确定迭代器类型是 map<string,int>::iterator
+    for (auto it = relation.begin(); it != relation.end(); it++) { 
         if (it->second == x) //注意map元素是一对，因此要指明是谁
             return it->first;
     }
