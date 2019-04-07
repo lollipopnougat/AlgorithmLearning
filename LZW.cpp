@@ -1,3 +1,4 @@
+//-*- coding=utf8 -*-
 #include <cstdlib>
 #include <iostream>
 #include <map>
@@ -5,6 +6,7 @@
 #include <string>
 using namespace std;
 
+//关于LZW编码我写了一个类来实现
 class LZW {
 public:
     LZW(string& list);
@@ -15,15 +17,25 @@ public:
     string Decode(string& result);
 
 private:
-    string strlist;
-    map<string, int> relation;
-    string GetKey(int x);
-    string ToHexStr(int x);
-    int ToInt(string& hexstr);
+    string strlist; //字符表字符串
+    map<string, int> relation; //存储字符表的容器
+    string GetKey(int x); //对map操作，通过value找到key
+    string ToHexStr(int x); //int转16进制字符串
+    int ToInt(string& hexstr); //16进制字符串转int
 };
 
 LZW::LZW(string& list)
 {
+    for (int i = 0; i < list.size(); i++)
+        relation.insert(make_pair(string(1, list[i]), i)); //map插入元素时要先make_pair()
+    relation.insert(make_pair(string("S_START"), list.size())); //开始标志
+    relation.insert(make_pair(string("S_END"), list.size() + 1)); //结束标志
+    strlist = list;
+}
+
+void LZW::ChangeList(string& list)
+{
+    relation.clear(); //清除map
     for (int i = 0; i < list.size(); i++)
         relation.insert(make_pair(string(1, list[i]), i));
     relation.insert(make_pair(string("S_START"), list.size()));
@@ -31,24 +43,15 @@ LZW::LZW(string& list)
     strlist = list;
 }
 
-void LZW::ChangeList(string& list)
-{
-    relation.clear();
-    for (int i = 0; i < list.size(); i++)
-        relation.insert(make_pair(string(1, list[i]), i));
-    relation.insert(make_pair(string("S_START"), list.size()));
-    relation.insert(make_pair(string("S_END"), list.size() + 1));
-}
-
-string LZW::Encode(string& source)
+string LZW::Encode(string& source) 
 {
     int st = relation[string("S_START")], en = relation[string("S_END")];
     string result = to_string(st);
     string s1 = "", s2 = "";
-    for (auto it = source.begin(); it != source.end(); it++) {
+    for (auto it = source.begin(); it != source.end(); it++) { //迭代器(iterator)遍历字符串
         s2 = *it;
         string tmp = s1 + s2;
-        if (relation.find(tmp) != relation.end()) {
+        if (relation.find(tmp) != relation.end()) { //STL map类的find()函数在map中寻找匹配key，找到返回其迭代器，找不到返回就mapname.end()
             s1 += s2;
             if (s1 == "")
                 s1 = s2;
@@ -65,8 +68,8 @@ string LZW::Encode(string& source)
 
 string LZW::GetKey(int x)
 {
-    for (auto it = relation.begin(); it != relation.end(); it++) {
-        if (it->second == x)
+    for (auto it = relation.begin(); it != relation.end(); it++) { //迭代器遍历map
+        if (it->second == x) //注意map元素是一对，因此要指明是谁
             return it->first;
     }
     return "";
@@ -75,11 +78,11 @@ string LZW::GetKey(int x)
 string LZW::ToHexStr(int x)
 {
     string tmp;
-    stringstream ss;
+    stringstream ss; //字符串流类 提供方便的类型转换
     ss << hex << x;
     ss >> tmp;
     ss.clear();
-    ss.str("");
+    ss.str(""); //用完一定记得清除缓存
     return tmp;
 }
 
@@ -98,11 +101,11 @@ string LZW::Decode(string& result)
 {
     string source;
     int st = relation[string("S_START")], en = relation[string("S_END")];
-    string code = result.substr(0, 1), old = to_string(st);
+    string code = result.substr(0, 1), old = to_string(st); //str.substr(int x, int y) 截取字串 下标取值[x,y)
     if (code != to_string(st))
         throw "Invalid String";
     for (int i = 1; i < result.size(); i++) {
-        code = string(1, result[i]);
+        code = string(1, result[i]); //string(int length,char c)由char型构造string
         if (GetKey(ToInt(code)) != "" && code != to_string(en)) {
             source += GetKey(ToInt(code));
             if (old != to_string(st)) {
@@ -110,7 +113,7 @@ string LZW::Decode(string& result)
                 relation.insert(make_pair(tmp, relation.size()));
             }
             old = code;
-        } else if (GetKey(ToInt(code)) == "") {
+        } else if (GetKey(ToInt(code)) == "") { //字符表内无此索引时
             string tmp = GetKey(ToInt(old)) + GetKey(ToInt(old)).substr(0, 1);
             source += tmp;
             relation.insert(make_pair(tmp, relation.size()));
@@ -171,6 +174,7 @@ int main(void)
             default:
                 cout << "非法输入!" << endl;
             }
+            lzw.ChangeList(list);
         }
     } catch (const char* st) {
         cerr << "Error! " << st << endl;
