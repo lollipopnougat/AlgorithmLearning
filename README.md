@@ -1,6 +1,6 @@
-# oh-my-cppproj
+# AlgorithmLearning
 
-# C++练习
+# 算法学习
 
 ## 注意
 
