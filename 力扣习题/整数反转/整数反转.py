@@ -1,4 +1,5 @@
 # -*- coding = utf-8 -*-
+# 整数反转
 # 很简单的题目不是吗？
 
 
@@ -11,12 +12,9 @@ class Solution:
             tmp = -x
         else:
             tmp = x
-        i = 0
         res = 0
         while tmp > 0:
-            res *= 10
-            i = tmp % 10
-            res += i
+            res = res *10 + tmp % 10
             tmp //= 10
         if isf:
             res = -res

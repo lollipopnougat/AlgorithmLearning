@@ -27,10 +27,25 @@ def isPalindrome2(x: int) -> bool:
     s = str(x)
     return s == s[::-1]
 
+def isPalindrome3(x: int) -> bool:
+    if x < 0:
+        return False
+    else:
+        tmp = x
+        res = 0
+        while tmp > 0:
+            res = res *10 + tmp % 10
+            tmp //= 10
+        if res == x:
+            return True
+        else:
+            return False
+        
+
 
 while (True):
     y = int(input("请输入数字: "))
-    print(isPalindrome2(y))
+    print(isPalindrome3(y))
 
 # 思考：如果不用字符串怎么办？
 
