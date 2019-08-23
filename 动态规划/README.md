@@ -1,8 +1,3 @@
-<style type="text/css">
-* {
-    font-family: 微软雅黑;
-}
-</style>
 # 动态规划
 
 动态规划与分治法类似，都是把大问题拆分成小问题，通过寻找大问题与小问题的递推关系，解决一个个小问题，最终达到解决原问题的效果。<br>
@@ -39,4 +34,4 @@
 
 最短路径问题，项目管理，网络流优化、库存管理、资源分配、设备更新、排序、装载等问题等；
 
-<span id="5" style="font-size:12px;">挤牛奶:（同济ACM第1132题）<span><a href="#1">↑</a>
+<span id="5" style="font-size:12px;"><a href="https://www.cnblogs.com/KingSann/articles/7307256.html">挤牛奶</a>:（同济ACM第1132题）<span><a href="#1">↑</a>
