@@ -36,10 +36,10 @@
 > 贪吃的九头龙，二分查找树，聚会的欢乐，数字三角形等
 4. 背包问题
 
-> 01背包问题，完全背包问题，分组背包问题，二维背包，装箱问题，挤牛奶<sup id="1"><a href="#5">1</a></sup>（同济ACM第1132题）等
+> 01背包问题，完全背包问题，分组背包问题，二维背包，装箱问题，挤牛奶<sup id="1"><a href="#5">1</a></sup>(同济ACM第1132题)等
 
 ### 应用实例
 
 最短路径问题，项目管理，网络流优化、库存管理、资源分配、设备更新、排序、装载等问题等；
 
-<span id="5" style="font-size:12px;"><a href="https://www.cnblogs.com/KingSann/articles/7307256.html">挤牛奶</a>:（同济ACM第1132题）<span><a href="#1">↑</a>
+<span id="5" style="font-size:12px;"><a href="https://www.cnblogs.com/KingSann/articles/7307256.html">挤牛奶</a>:(同济ACM第1132题)<span><a href="#1">↑</a>

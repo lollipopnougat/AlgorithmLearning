@@ -1,6 +1,6 @@
 # 贪心算法
 ## 简介
-贪心算法（Greedy Algorithm），又称贪婪算法，是一种**在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择**，从而希望导致结果是最好或最优的算法。比如在[旅行推销员](https://github.com/lollipopnougat/AlgorithmLearning/tree/master/TSP)问题中，如果旅行员每次都选择最近的城市，那这就是一种贪心算法。
+贪心算法(Greedy Algorithm)，又称贪婪算法，是一种**在每一步选择中都采取在当前状态下最好或最优(即最有利)的选择**，从而希望导致结果是最好或最优的算法。比如在[旅行推销员](https://github.com/lollipopnougat/AlgorithmLearning/tree/master/TSP)问题中，如果旅行员每次都选择最近的城市，那这就是一种贪心算法。
 
 ## 特点
 **贪心算法在有最优子结构的问题中尤为有效**。**最优子结构的意思是局部最优解能决定全局最优解**。<br>
