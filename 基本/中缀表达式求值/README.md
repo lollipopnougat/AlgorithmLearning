@@ -18,5 +18,5 @@
 ### 注意
 
 - `C#` 源码, `*.cs`, 使用 `double` 计算, 无精度问题
-- `Java` 源码 `*.java`, 分别使用 `double` 和 `BigDecimal` 类处理, 其中使用 `double` 类型的在 `JDK12` 下会有精度问题, 例如著名的 `0.1 + 0.2 != 0.3 ` 的问题，使用 `BigDecimal` 类可以解决, 但是要注意, `Java` 不支持运算符重载, 因此 `BigDecimal` 类的运算要使用 `left.add(right)` 这种形式, `C#`不仅支持运算符重载还有 `decimal` 关键字, 该类型使用 128 bit 保存浮点数, 精度可达 10^-28 级别.
+- `Java` 源码 `*.java`, 分别使用 `double` 和 `BigDecimal` 类处理, 其中使用 `double` 类型的在 `JDK12` 下会有精度问题, 例如著名的 `0.1 + 0.2 != 0.3 ` 的问题，使用 `BigDecimal` 类可以解决, 但是要注意, `Java` 不支持运算符重载, 因此 `BigDecimal` 类的运算要使用 `left.add(right)` 这种形式, `C#`不仅支持运算符重载还有 `decimal` 关键字, 该类型使用 128 bit 保存浮点数, 精度可达 10^-28 级别. `Java` 和 `C#` 版还有 `正则表达式` 版的二元计算器实现.
 
