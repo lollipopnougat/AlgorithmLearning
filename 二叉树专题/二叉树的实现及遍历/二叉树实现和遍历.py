@@ -102,22 +102,24 @@ class BinTree:
             self.__LRD(node.right)
             self.tree_str += ' ' + str(node.val)
 
-    # 后序非递归
+    # 后序非递归 
     def __LRDNR(self, node: TreeNode):
         stack = []
+        tmp = []
         stack.append(node)
-        flag = False  # 是否跳转父节点
         while len(stack) != 0:
             root = stack[-1]
-            if root.left != None and not flag:
-                stack.append(root.left)
-            else:
-                if root.right != None:
-                    stack.append(root.right)
-                    flag = False
-                else:
-                    flag = True
+            if len(tmp) != 0 and tmp[-1] == root:
                 self.tree_str += ' ' + str(root.val)
+                tmp.pop()
+                stack.pop()
+            elif root == None:
+                stack.pop()
+                continue
+            else:
+                tmp.append(root)
+                stack.append(root.right)
+                stack.append(root.left)
 
     def print_tree(self, show_type: str):
         self.tree_str = ''
