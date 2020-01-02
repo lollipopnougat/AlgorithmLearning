@@ -23,7 +23,7 @@ def get_index(num: list, low: int, high: int):
 def quick_sort(num: list, low: int, high: int):
     if low < high:
         index = get_index(num, low, high)
-        quick_sort(num, 0, index - 1)
+        quick_sort(num, low, index - 1)
         quick_sort(num, index + 1, high)
 
 
