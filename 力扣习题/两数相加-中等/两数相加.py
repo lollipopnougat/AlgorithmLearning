@@ -4,7 +4,7 @@ class ListNode:
         self.val = x
         self.next = None
 
-# 我的思路
+# 我的思路 主要是按位计算
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         if l1 == None or l2 == None:
