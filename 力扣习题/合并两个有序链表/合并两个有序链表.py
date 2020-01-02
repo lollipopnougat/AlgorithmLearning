@@ -5,6 +5,7 @@ class ListNode:
         self.next = None
 
 
+# 我的思路
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         st_node = None

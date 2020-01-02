@@ -31,22 +31,14 @@ class Solution2:
 class Solution3:
     def isPalindrome(self, s: str) -> bool:
         b = ''.join(e for e in s.lower() if e.isalnum())
-        #b = b.lower()
-        #print(tmp)
-        #le = len(tmp)
-        #i = 0
-        #flag = False
-        # while tmp[i] == tmp[le - i - 1]:
-        #     if i == le // 2:
-        #         flag = True
-        #         break
-        #     i += 1
         return b == b[::-1]
 
 
 # 越发变态...
 class Solution4:
     def isPalindrome(self, s: str) -> bool:
+        # s = list(filter(str.isalnum, s.lower()))
+        # return True if s == s[::-1] else False
         s = [*filter(str.isalnum, s.lower())]
         return True if s == s[::-1] else False
 
