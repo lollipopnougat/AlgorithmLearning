@@ -41,4 +41,4 @@ class Solution:
 
 s = Solution()
 
-print(s.solveNQueens(4))
+print(s.solveNQueens(8))

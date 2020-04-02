@@ -1,5 +1,4 @@
 .vscode/
 *.exe
 .vs/
-八皇后.py
 NetGraph2MST.cpp
