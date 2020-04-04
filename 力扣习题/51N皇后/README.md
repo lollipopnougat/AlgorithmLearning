@@ -1,10 +1,10 @@
 # 题目
 
-## 两数之和
+## N皇后
 
 ### 来源:
 
-[N皇后](https://leetcode-cn.com/problems/n-queens/)
+[力扣-N皇后](https://leetcode-cn.com/problems/n-queens/)
 
 ### 题目内容
 n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击，即所有皇后不在同一行，同一列，同一斜线上 <br>

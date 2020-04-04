@@ -120,6 +120,19 @@ class BinTree:
                 tmp.append(root)
                 stack.append(root.right)
                 stack.append(root.left)
+    # 层序
+    def __level_order(self, node: TreeNode):
+        if node == None:
+            return []
+        cur = [node]
+        while len(cur):
+            culen = len(cur)
+            for i in range(culen):
+                p = cur.pop(0)
+                if p:
+                    self.tree_str += str(p.val) + ' '
+                    cur.append(p.left)
+                    cur.append(p.right)
 
     def print_tree(self, show_type: str):
         self.tree_str = ''
@@ -141,11 +154,14 @@ class BinTree:
             print('前序遍历(非递归): ')  
         elif show_type == 'LRDNR':
             self.__LRDNR(node)
-            print('后序遍历(非递归): ')      
+            print('后序遍历(非递归): ') 
+        elif show_type == 'LEV':
+            self.__level_order(node)
+            print('层序遍历: ')       
         else:
             self.tree_str = '参数错误'
         print(self.tree_str)
-
+    
 
 if __name__ == "__main__":
     tree = BinTree(
@@ -156,3 +172,17 @@ if __name__ == "__main__":
     tree.print_tree('LDRNR')
     tree.print_tree('LRD')
     tree.print_tree('LRDNR')
+    tree.print_tree('LEV')
+
+''' 
+demo中的二叉树是
+     1
+   /  \
+  2    3
+   \    \
+    4   6
+   /   / 
+  5   7
+    /  \
+   8   9
+'''
