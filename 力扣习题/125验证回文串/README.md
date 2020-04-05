@@ -14,10 +14,10 @@
 
 ### 示例 1:
 
-> 输入: "A man, a plan, a canal: Panama"
+> 输入: "A man, a plan, a canal: Panama"<br>
 > 输出: true
 
-示例 2:
+### 示例 2:
 
-> 输入: "race a car"
+> 输入: "race a car"<br>
 > 输出: false

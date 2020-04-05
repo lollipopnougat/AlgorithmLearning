@@ -4,6 +4,7 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 # 我的思路 主要是按位计算
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
@@ -40,53 +41,60 @@ class Solution:
 # 是大佬 awsl
 class Solution2:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        dummy = ListNode(None)
+        cur = dummy
         carry = 0
-        currentNode = headNode = ListNode(0)
-        while l1 or l2:
-            theSum = (l1.val if l1 else 0) + (l2.val if l2 else 0) + carry
-            val = theSum % 10
-            carry = theSum // 10
-            currentNode.val = val
-            l1 = l1.next if l1 else None
-            l2 = l2.next if l2 else None
-            if l1 or l2:
-                currentNode.next = ListNode(0)
-                currentNode = currentNode.next
-        if carry:
-            currentNode.next = ListNode(carry)
-
-        return headNode
+        while l1 or l2 or carry:
+            temp = carry
+            if l1:
+                temp += l1.val
+                l1 = l1.next
+            if l2:
+                temp += l2.val
+                l2 = l2.next
+            cur.next = ListNode(temp % 10)
+            carry = temp // 10
+            cur = cur.next
+        return dummy.next
 
 
 # 角度刁钻版 突然想到的实现 非常真实
 class Solution3:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        def nodeToInt(lis: ListNode) -> int:
+            p = lis
+            res = 0
+            t = 0
+            while p:
+                res += p.val * 10**t
+                p = p.next
+                t += 1
+            return res
+
+        def intToNode(num: int) -> ListNode:
+            head_node = ListNode(num % 10)
+            l = num // 10
+            p = head_node
+            while l != 0:
+                p.next = ListNode(l % 10)
+                l = l // 10
+                p = p.next
+            return head_node
+
         if l1 == None and l2 == None:
             return None
-        num1 = self.nodeToInt(l1)
-        num2 = self.nodeToInt(l2)
-        res = num1 + num2
-        return self.intToNode(res)
+        return intToNode(nodeToInt(l1) + nodeToInt(l2))
 
-    def nodeToInt(self, lis: ListNode) -> int:
-        p = lis
-        res = 0
-        t = 0
-        while p:
-            res += p.val * 10**t
-            p = p.next
-            t += 1
-        return res
 
-    def intToNode(self, num: int) -> ListNode:
-        head_node = ListNode(num % 10)
-        l = num // 10
-        p = head_node
-        while l != 0:
-            p.next = ListNode(l % 10)
-            l = l // 10
-            p = p.next
-        return head_node
+def int_to_node(num: int) -> ListNode:
+            head_node = ListNode(num % 10)
+            l = num // 10
+            p = head_node
+            while l != 0:
+                p.next = ListNode(l % 10)
+                l = l // 10
+                p = p.next
+            return head_node
 
 
 l1 = ListNode(5)
@@ -101,11 +109,19 @@ p.next = ListNode(4)
 p = p.next
 p.next = ListNode(3)
 
+l3 = int_to_node(999)
+l4 = int_to_node(1)
 s = Solution3()
+s2 = Solution2()
 
 res = s.addTwoNumbers(l1, l2)
-
+res2 = s2.addTwoNumbers(l3,l4)
 while res:
     print(str(res.val) + ' -> ', end='')
     res = res.next
-print('end')
+print('end1')
+
+while res2:
+    print(str(res2.val) + ' -> ', end='')
+    res2 = res2.next
+print('end2')
