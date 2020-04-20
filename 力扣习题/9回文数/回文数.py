@@ -13,19 +13,22 @@ class Solution:
 '''
 # 我的想法是将数字转字符串，反转以后再转换成整型比较，一致就是回文
 
+
 def isPalindrome1(x: int) -> bool:
     if x >= 0:
         if x == int(str(x)[::-1]):
             return True
         else:
             return False
-    else: # 负数肯定不是回文数
+    else:  # 负数肯定不是回文数
         return False
+
 
 #  优化：
 def isPalindrome2(x: int) -> bool:
     s = str(x)
     return s == s[::-1]
+
 
 def isPalindrome3(x: int) -> bool:
     if x < 0:
@@ -34,13 +37,12 @@ def isPalindrome3(x: int) -> bool:
         tmp = x
         res = 0
         while tmp > 0:
-            res = res *10 + tmp % 10
+            res = res * 10 + tmp % 10
             tmp //= 10
         if res == x:
             return True
         else:
             return False
-        
 
 
 while (True):
@@ -48,7 +50,6 @@ while (True):
     print(isPalindrome3(y))
 
 # 思考：如果不用字符串怎么办？
-
 '''
 class Solution:
     def isPalindrome(self, x: int) -> bool:

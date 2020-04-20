@@ -87,14 +87,14 @@ class Solution3:
 
 
 def int_to_node(num: int) -> ListNode:
-            head_node = ListNode(num % 10)
-            l = num // 10
-            p = head_node
-            while l != 0:
-                p.next = ListNode(l % 10)
-                l = l // 10
-                p = p.next
-            return head_node
+    head_node = ListNode(num % 10)
+    l = num // 10
+    p = head_node
+    while l != 0:
+        p.next = ListNode(l % 10)
+        l = l // 10
+        p = p.next
+    return head_node
 
 
 l1 = ListNode(5)
@@ -115,7 +115,7 @@ s = Solution3()
 s2 = Solution2()
 
 res = s.addTwoNumbers(l1, l2)
-res2 = s2.addTwoNumbers(l3,l4)
+res2 = s2.addTwoNumbers(l3, l4)
 while res:
     print(str(res.val) + ' -> ', end='')
     res = res.next

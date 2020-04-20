@@ -14,7 +14,7 @@ class Solution:
             tmp = x
         res = 0
         while tmp > 0:
-            res = res *10 + tmp % 10
+            res = res * 10 + tmp % 10
             tmp //= 10
         if isf:
             res = -res

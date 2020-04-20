@@ -26,6 +26,7 @@ class Solution:
             res = max(res, dp[i])
         return res
 
+
 '''
 大佬优化的动态规划
 ans : 上一个位置的最长字串长度
@@ -33,6 +34,7 @@ i : 重复元素下一个元素的位置，
 想象成一个队列，一边添加，遇到重复的另一边就删除，
 删除后记录长度的起始位置为删除元素（重复元素）的下一个元素，所以为st[s[j]] + 1
 '''
+
 
 class Solution2:
     def lengthOfLongestSubstring(self, s: str) -> int:
@@ -48,6 +50,4 @@ class Solution2:
 
 s = Solution()
 print(s.lengthOfLongestSubstring("pwwkew"))
-
-
 
