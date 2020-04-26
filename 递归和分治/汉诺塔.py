@@ -4,7 +4,7 @@
 
 def hanoi(a, b, c, n):
     if n == 1:
-        print(a, ' --> ', b)
+        print(a, ' --> ', c)
     else:
         hanoi(a, c, b, n - 1)  # n-1个盘子从A移到B
         hanoi(a, b, c, 1)  # 剩下一个盘子从A移到C
@@ -17,3 +17,4 @@ if __name__ == "__main__":
         hanoi('A', 'B', 'C', n)
     except Exception as er:
         print(str(er))
+    input()

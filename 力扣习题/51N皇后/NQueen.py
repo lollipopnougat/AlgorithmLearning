@@ -19,7 +19,7 @@ class Solution:
             if self.is_ok(chess_tmp, row, i):
                 self.cal_row(chess_tmp, row + 1)
 
-    def is_ok(self, ch: list, row: int, col: int):
+    def is_ok(self, ch: list, row: int, col: int) -> bool:
         step = 1
         while row - step >= 0:
             if ch[row - step][col] == 1:
@@ -31,7 +31,7 @@ class Solution:
             step += 1
         return True
 
-    def solveNQueens(self, n: int):
+    def solveNQueens(self, n: int) -> list:
         self.res = []
         self.chess = [[0] * n for i in range(n)]
         self.num = n

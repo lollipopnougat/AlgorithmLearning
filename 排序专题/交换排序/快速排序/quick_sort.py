@@ -22,9 +22,9 @@ def quick_sort_o(numlist: list, low: int, high: int):
 def quick_sort(n: list, l: int, h: int):
     ol = l
     oh = h
-    if (l < h):
+    if l < h:
         t = n[l]
-        while (l < h):
+        while l < h:
             while l < h and n[h] >= t:
                 h -= 1
             n[l] = n[h]
