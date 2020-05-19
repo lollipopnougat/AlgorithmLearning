@@ -30,11 +30,12 @@ def quick_sort(n: list, l: int, h: int):
             n[l] = n[h]
             while l < h and n[l] <= t:
                 l += 1
-            n[l] = t
+            n[h] = n[l]
+        n[l] = t
         quick_sort(n, ol, l - 1)
         quick_sort(n, l + 1, oh)
 
 
-li = [1, 5, 2, 9, 3, 7]
+li = [18, 5, 23, 8, 16, 5]
 quick_sort(li, 0, len(li) - 1)
 print(li)
