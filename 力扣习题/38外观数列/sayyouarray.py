@@ -16,7 +16,7 @@ class Solution:
         result += str(num) + tmp
         return result
 
-
+# 某大佬的优化...直接枚举
 class Solution2:
     def countAndSay(self, n: int) -> str:
         dic = {
