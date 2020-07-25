@@ -1,20 +1,17 @@
 def get_next(text:str) -> list:
     length = len(text)
     next_arr = [0] * length
-    i, j, count = 1, 0, 0
+    i, j = 1, 0
     while i < length:
         if text[i] == text[j]:
-            count += 1
-            next_arr[i] = count
-            i += 1
             j += 1
+            next_arr[i] = j
+            i += 1
         elif j == 0:
-            next_arr[i] = count
-            j = 0;
+            next_arr[i] = 0
             i += 1
         else:
-            count = 0
-            j = 0
+            j = next_arr[j - 1]
     return next_arr
 
 def mykmp_search(text:str, pat:str) -> int:
@@ -35,4 +32,6 @@ def mykmp_search(text:str, pat:str) -> int:
     return -1
 
 print(get_next('ababcabc'))
+print(get_next('uefhiuefbeuifgbrygfecfge78fgABCDEdfbfbdddb'))
 print(mykmp_search('ababcababcabc', 'ababcabc'))
+print(mykmp_search('uefhiuefbeuifgbrygfecfge78fgABCDEdfbfbdddb', 'CDE'))
