@@ -124,15 +124,13 @@ class BinTree:
     def __level_order(self, node: TreeNode):
         if node == None:
             return []
-        cur = [node]
-        while len(cur):
-            culen = len(cur)
-            for i in range(culen):
-                p = cur.pop(0)
-                if p:
-                    self.tree_str += str(p.val) + ' '
-                    cur.append(p.left)
-                    cur.append(p.right)
+        que = [node]
+        while que:
+            p = que.pop(0)
+            if p:
+                self.tree_str += str(p.val) + ' '
+                que.append(p.left)
+                que.append(p.right)
 
     def print_tree(self, show_type: str):
         self.tree_str = ''
