@@ -7,19 +7,18 @@ class Graph:
     node_nums = 0
     edge_nums = 0
 
-    def __init__(self, n: int):
+    def __init__(self, n: int = 0):
         self.adjm = [[0] * n for _ in range(n)]
         self.name = [str(i) for i in range(n)]
         self.node_nums = n
 
-    def __init__(self):
-        pass
-
-    def __init__(self, lis: list):
+    @staticmethod
+    def buildbylist(lis: list):
         n = len(lis)
-        self.adjm = [[0] * n for _ in range(n)]
-        self.name = [i for i in lis]
-        self.node_nums = n
+        t = Graph(n)
+        t.adjm = [[0] * n for _ in range(n)]
+        t.name = [i for i in lis]
+        return t
 
     def add_edge(self, fr: str, to: str, weight: int):
         i, j = self.name.index(fr), self.name.index(to)
@@ -83,7 +82,7 @@ class Graph:
 
 
 
-g = Graph(lis=['A','B','C','D'])
+g = Graph.buildbylist(lis=['A','B','C','D'])
     
 g.add_edge('A', 'B', 1)
 g.add_edge('A', 'C', 2)

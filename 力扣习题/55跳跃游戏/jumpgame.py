@@ -7,7 +7,7 @@
 '''
 
 class Solution:
-    def canJump(self, nums: List[int]) -> bool:
+    def canJump(self, nums: list) -> bool:
         can_reach = 0
         for i in range(len(nums)):
             if i > can_reach:

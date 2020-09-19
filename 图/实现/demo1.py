@@ -10,11 +10,9 @@ class Graph:
     node_map = {}
     edge_list = []
 
-    def __init__(self, node: Node):
-        self.add_node(node)
-
-    def __init__(self):
-        pass
+    def __init__(self, node: Node = None):
+        if node:
+            self.add_node(node)
 
     def has_node(self, ndnm:str) -> bool:
         return ndnm in self.node_map
@@ -73,7 +71,8 @@ class Graph:
 
     def bfs(self, ndnm:str):
         res = []
-        if self.has_node(ndnm):
+        if self.has_node(
+            ndnm):
             vistied = {}
             queue = [ndnm]
             while len(queue) != 0:

@@ -64,6 +64,37 @@ class LinkList:
         node = Node(value)
         return self.insert_node(node, index)
 
+    def swap_nodes(self, indexl: int, indexr: int) -> bool:
+        if indexl > self.length or indexr > self.length or indexl == indexr:
+            return False
+        head = Node(None)
+        if indexl > indexr:
+            indexl, indexr = indexr, indexl
+        head.next = self.head
+        tmp = None
+        if indexl == 0:
+            tmp = head
+        else:
+            p = self.head
+            i = 0
+            while i < indexl - 1:
+                p = p.next
+                i += 1
+            tmp = p
+        i = 0
+        p = self.head
+        while i < indexr - 1:
+            p = p.next
+        
+        
+
+
+
+
+
+        
+
+
 
 li = LinkList()
 

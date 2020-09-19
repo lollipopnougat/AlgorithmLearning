@@ -1,5 +1,5 @@
 class Solution:
-    def findSubsequences(self, nums: List[int]) -> List[List[int]]:
+    def findSubsequences(self, nums: list) -> list:
         self.res = []
         self.dfs(0,nums,[])
         return self.res 
