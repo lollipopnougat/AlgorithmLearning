@@ -1,9 +1,11 @@
 class Node:
     def __init__(self, value) -> None:
+        self.pre = None
         self.next = None
         self.val = value
 
-class LinkList:
+
+class DualLinkList:
     def __init__(self) -> None:
         self.head = None
         self.length = 0
@@ -15,6 +17,7 @@ class LinkList:
             while p.next:
                 p = p.next
             p.next = node
+            node.pre = p
         else:
             self.head = node
         node.next = None
@@ -35,6 +38,8 @@ class LinkList:
             p = p.next
             num += 1
         p.next = p.next.next
+        if p.next.next:
+            p.next.next.pre = p
         return True
     
     def to_list(self) -> list:
@@ -58,7 +63,10 @@ class LinkList:
             p = p.next
             num += 1
         node.next = p.next
+        if p.next:
+            p.next.pre = node
         p.next = node
+        node.pre = p
         return True
     
     def insert_value(self, value, index: int) -> bool:
@@ -86,24 +94,21 @@ class LinkList:
             count += 1
         p1.next = w2
         w1.next = a2
+        if p1 != head:
+            w2.pre = p1
         if w2 != a1:
             w2.next = a1
             p2.next = w1
+            w1.pre = p2
+            a1.pre = w2
         else:
             w2.next = w1
+            w1.pre = w2
+        if a2:
+            a2.pre = w1
         self.head = head.next
-        
-        
 
-
-
-
-
-        
-
-
-
-li = LinkList()
+li = DualLinkList()
 
 li.add_value(1)
 li.add_value(2)
@@ -113,11 +118,3 @@ li.add_value(5)
 li.insert_value(7, 1)
 li.swap_nodes(1, 5)
 print(li.to_list())
-
-        
-
-
-        
-
-
-

@@ -32,5 +32,21 @@ class Solution:
                 return self.myPow(x, n - 1) * x
 
 
+class Solution2:
+    '''
+    常数级优化带师...
+    '''
+    def myPow(self, x: float, n: int) -> float:
+        if n < 0:
+            return 1 / self.myPow(x, -n)
+        if n == 0:
+            return 1
+        if n == 1:
+            return x
+        if n & 1:
+            return x * self.myPow(x, n - 1)
+        else:
+            return self.myPow(x * x, n >> 1)
+
 s = Solution()
 print(s.myPow(0.0001,2147483647))
