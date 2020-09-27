@@ -28,14 +28,16 @@ class Solution:
         return node
 
     def print_tree(self, node: Node):
+        # 二叉排序树的中序遍历是有序的
         if node != None:
-            print(node.value, end=' ')
-            print('左孩子', end=' ')
             self.print_tree(node.left)
-            print('右孩子', end=' ')
+            print(node.value, end=' ')
             self.print_tree(node.right)
+            #print('左孩子', end=' ')
+            #print('右孩子', end=' ')
         else:
-            print('空节点', end=' ')
+            #print('空节点', end=' ')
+            pass
 
 
 if __name__ == "__main__":

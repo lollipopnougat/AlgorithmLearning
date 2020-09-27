@@ -1,4 +1,5 @@
 .vscode/
 *.exe
 .vs/
+__pycache__/
 NetGraph2MST.cpp
