@@ -20,16 +20,21 @@ class BST:
         return node
 
     def add_node(self, val):
-        node = TreeNode(val)
-        p = self.root
-        while p.left and p.val >= val:
-            p = p.left
-        while p.right and p.val < val:
-            p = p.right
-        if p.val >= val:
-            p.left = node
+        if self.root:
+            p = self.root
+            while True:
+                if p.val > val:
+                    if not p.left:
+                        p.left = TreeNode(val)
+                        break
+                    p = p.left
+                if p.val < val:
+                    if not p.right:
+                        p.right = TreeNode(val)
+                        break
+                    p = p.right
         else:
-            p.right = node
+            self.root = TreeNode(val)
     
     def search(self, root: TreeNode, val):
         if root:

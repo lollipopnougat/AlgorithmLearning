@@ -54,7 +54,7 @@ class matrix:
             else:
                 ans += li[0][i] * t
         return ans
-    
+
     # 静态方法: 求矩阵对应行列式值
     @staticmethod
     def det_val(ma):
@@ -76,10 +76,11 @@ class matrix:
             for j in range(ma.rows):
                 for k in range(ma.rows - 1):
                     for m in range(ma.rows - 1):
-                        tmp[k][m] = ma.mat[k + 1 if k >= i else k][m + 1 if m >= j else m]
+                        tmp[k][m] = ma.mat[k + 1 if k >= i else k][
+                            m + 1 if m >= j else m]
                 res[j][i] = matrix.__det_helper(tmp, ma.rows - 1)
                 if (i + j) % 2 == 1:
-                    res[j][i] = - res[j][i]
+                    res[j][i] = -res[j][i]
         return matrix.from_list(res)
 
     # 静态方法: 求矩阵的逆
@@ -102,9 +103,35 @@ class matrix:
             tmp.mat[i][i] = 1
         return tmp
 
+    # 静态方法: 获取矩阵的秩
+    @staticmethod
+    def get_rank(ma):
+        t = ma.copy()
+        i = j = 0
+        m, n = t.rows - 1, t.cols - 1
+        while i < m and j < n:
+            r = i
+            for k in range(i, m):
+                if t[k][j]:
+                    r = k
+                    break
+            if t[r][j]:
+                if r != i:
+                    t[r], t[i] = t[i], t[r]
+                for u in range(i + 1, m):
+                    if t[u][j]:
+                        for k in range(i, n + 1):
+                            t[u][k] ^= t[i][k]
+                i += 1
+            j += 1
+        return i
+
     # 获取元素
-    def __getitem__(self, key: int):
+    def __getitem__(self, key: int) -> list:
         return self.mat[key]
+
+    def __setitem__(self, key: int, val: list):
+        self.mat[key] = val
 
     # 直接对矩阵对象进行转置 需要是方阵
     def transposed(self):
@@ -167,11 +194,11 @@ class matrix:
             return matrix.from_list([[i / other for i in j] for j in self.mat])
         else:
             return self.__mul__(matrix.get_inverse(other))
-    
+
     # 重载 == 运算符
     def __eq__(self, other) -> bool:
         return self.to_list() == other.to_list()
-    
+
     # 重载 != 运算符
     def __ne__(self, other) -> bool:
         return self.to_list() != other.to_list()
@@ -187,23 +214,25 @@ class matrix:
 if __name__ == "__main__":
     li1 = [[1, 2, 3], [4, 0, 6], [1, 1, 2]]
     li2 = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
-    li4 = [1,2,3,4]
+    li4 = [1, 2, 3, 4]
+    li5 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     m1 = matrix.from_list(li1)
     m2 = matrix.from_list(li2)
     m3 = matrix.eye(3)
     m4 = matrix.from_list(li4)
     m5 = matrix.get_inverse(m1)
+    m6 = matrix.from_list(li5)
     #print(m1 * m2)
     #print(len(m1))
-    print('')
-    print(m4)
-    print('')
-    print(matrix.get_transpose(m4))
-    print('')
-    m2.transposed()
-    print(m1 * m5)
-    print('')
-
+    # print('')
+    # print(m4)
+    # print('')
+    #print(matrix.get_transpose(m4))
+    #print('')
+    # m2.transposed()
+    # print(m1 * m5)
+    # print('')
+    print(matrix.get_rank(m6))
     print(m2 == m3)
     #print(matrix.is_identity(m2))
     print('')
