@@ -7,7 +7,7 @@ class Solution:
             s[i],s[-1-i] = s[-1-i],s[i]
 
 
-# ?不能return reverse()这还能难住？
+#  不能return reverse()这还能难住？
 class Solution2:
     def reverseString(self, s: List[str]) -> None:
         """

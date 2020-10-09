@@ -1,18 +1,18 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## ¶þ²æÊ÷µÄ²ã´Î±éÀú II
+## äºŒå‰æ ‘çš„å±‚æ¬¡éåŽ† II
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-¶þ²æÊ÷µÄ²ã´Î±éÀú II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/)
+[åŠ›æ‰£-äºŒå‰æ ‘çš„å±‚æ¬¡éåŽ† II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/)
 
-### ÌâÄ¿ÄÚÈÝ
+### é¢˜ç›®å†…å®¹
 
-¸ø¶¨Ò»¸ö¶þ²æÊ÷£¬·µ»ØÆä½ÚµãÖµ×Ôµ×ÏòÉÏµÄ²ã´Î±éÀú¡£ £¨¼´°´´ÓÒ¶×Ó½ÚµãËùÔÚ²ãµ½¸ù½ÚµãËùÔÚµÄ²ã£¬Öð²ã´Ó×óÏòÓÒ±éÀú£©
+ç»™å®šä¸€ä¸ªäºŒå‰æ ‘ï¼Œè¿”å›žå…¶èŠ‚ç‚¹å€¼è‡ªåº•å‘ä¸Šçš„å±‚æ¬¡éåŽ†ã€‚ ï¼ˆå³æŒ‰ä»Žå¶å­èŠ‚ç‚¹æ‰€åœ¨å±‚åˆ°æ ¹èŠ‚ç‚¹æ‰€åœ¨çš„å±‚ï¼Œé€å±‚ä»Žå·¦å‘å³éåŽ†ï¼‰
 
-### ÀýÈç£º
+### ä¾‹å¦‚ï¼š
 
-¸ø¶¨¶þ²æÊ÷ `[3,9,20,null,null,15,7]`,
+ç»™å®šäºŒå‰æ ‘ `[3,9,20,null,null,15,7]`,
 
 ```plaintext
     3
@@ -22,7 +22,7 @@
    15   7
 ```
 
-·µ»ØÆä×Ôµ×ÏòÉÏµÄ²ã´Î±éÀúÎª£º
+è¿”å›žå…¶è‡ªåº•å‘ä¸Šçš„å±‚æ¬¡éåŽ†ä¸ºï¼š
 
 ```plaintext
 [

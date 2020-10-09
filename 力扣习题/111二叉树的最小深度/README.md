@@ -1,28 +1,28 @@
-# ��Ŀ
+# 题目
 
-## ����������С���
+## 二叉树的最小深度
 
-### ��Դ:
+### 来源:
 
-[����-����������С���](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)
+[力扣-二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)
 
-### ��Ŀ����
+### 题目内容
 
-����һ�����������ҳ�����С��ȡ�
+给定一个二叉树，找出其最小深度。
 
-��С����ǴӸ��ڵ㵽���Ҷ�ӽڵ�����·���ϵĽڵ�������
+最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
 
-˵��: Ҷ�ӽڵ���ָû���ӽڵ�Ľڵ㡣
+说明: 叶子节点是指没有子节点的节点。
 
-### ʾ��:
+### 示例:
 
 ```plaintext
-���������� [3,9,20,null,null,15,7],
+给定二叉树 [3,9,20,null,null,15,7],
 
     3
    / \
   9  20
     /  \
    15   7
-����������С���  2.
+返回它的最小深度  2.
 ```

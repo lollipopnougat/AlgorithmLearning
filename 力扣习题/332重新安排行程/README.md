@@ -1,33 +1,33 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## ÖØÐÂ°²ÅÅÐÐ³Ì
+## é‡æ–°å®‰æŽ’è¡Œç¨‹
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-ÖØÐÂ°²ÅÅÐÐ³Ì](https://leetcode-cn.com/problems/reconstruct-itinerary/)
+[åŠ›æ‰£-é‡æ–°å®‰æŽ’è¡Œç¨‹](https://leetcode-cn.com/problems/reconstruct-itinerary/)
 
-### ÌâÄ¿ÄÚÈÝ
+### é¢˜ç›®å†…å®¹
 
-¸ø¶¨Ò»¸ö»úÆ±µÄ×Ö·û´®¶þÎ¬Êý×é [from, to]£¬×ÓÊý×éÖÐµÄÁ½¸ö³ÉÔ±·Ö±ð±íÊ¾·É»ú³ö·¢ºÍ½µÂäµÄ»ú³¡µØµã£¬¶Ô¸ÃÐÐ³Ì½øÐÐÖØÐÂ¹æ»®ÅÅÐò¡£ËùÓÐÕâÐ©»úÆ±¶¼ÊôÓÚÒ»¸ö´Ó JFK£¨¿ÏÄáµÏ¹ú¼Ê»ú³¡£©³ö·¢µÄÏÈÉú£¬ËùÒÔ¸ÃÐÐ³Ì±ØÐë´Ó `JFK` ¿ªÊ¼¡£
+ç»™å®šä¸€ä¸ªæœºç¥¨çš„å­—ç¬¦ä¸²äºŒç»´æ•°ç»„ [from, to]ï¼Œå­æ•°ç»„ä¸­çš„ä¸¤ä¸ªæˆå‘˜åˆ†åˆ«è¡¨ç¤ºé£žæœºå‡ºå‘å’Œé™è½çš„æœºåœºåœ°ç‚¹ï¼Œå¯¹è¯¥è¡Œç¨‹è¿›è¡Œé‡æ–°è§„åˆ’æŽ’åºã€‚æ‰€æœ‰è¿™äº›æœºç¥¨éƒ½å±žäºŽä¸€ä¸ªä»Ž JFKï¼ˆè‚¯å°¼è¿ªå›½é™…æœºåœºï¼‰å‡ºå‘çš„å…ˆç”Ÿï¼Œæ‰€ä»¥è¯¥è¡Œç¨‹å¿…é¡»ä»Ž `JFK` å¼€å§‹ã€‚
 
-ËµÃ÷:
+è¯´æ˜Ž:
 
-Èç¹û´æÔÚ¶àÖÖÓÐÐ§µÄÐÐ³Ì£¬Äã¿ÉÒÔ°´×Ö·û×ÔÈ»ÅÅÐò·µ»Ø×îÐ¡µÄÐÐ³Ì×éºÏ¡£ÀýÈç£¬ÐÐ³Ì `["JFK", "LGA"]` Óë `["JFK", "LGB"]` Ïà±È¾Í¸üÐ¡£¬ÅÅÐò¸ü¿¿Ç°
-ËùÓÐµÄ»ú³¡¶¼ÓÃÈý¸ö´óÐ´×ÖÄ¸±íÊ¾£¨»ú³¡´úÂë£©¡£
-¼Ù¶¨ËùÓÐ»úÆ±ÖÁÉÙ´æÔÚÒ»ÖÖºÏÀíµÄÐÐ³Ì¡£
+å¦‚æžœå­˜åœ¨å¤šç§æœ‰æ•ˆçš„è¡Œç¨‹ï¼Œä½ å¯ä»¥æŒ‰å­—ç¬¦è‡ªç„¶æŽ’åºè¿”å›žæœ€å°çš„è¡Œç¨‹ç»„åˆã€‚ä¾‹å¦‚ï¼Œè¡Œç¨‹ `["JFK", "LGA"]` ä¸Ž `["JFK", "LGB"]` ç›¸æ¯”å°±æ›´å°ï¼ŒæŽ’åºæ›´é å‰
+æ‰€æœ‰çš„æœºåœºéƒ½ç”¨ä¸‰ä¸ªå¤§å†™å­—æ¯è¡¨ç¤ºï¼ˆæœºåœºä»£ç ï¼‰ã€‚
+å‡å®šæ‰€æœ‰æœºç¥¨è‡³å°‘å­˜åœ¨ä¸€ç§åˆç†çš„è¡Œç¨‹ã€‚
 
-### Ê¾Àý 1:
-
-```plaintext
-ÊäÈë: [["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]
-Êä³ö: ["JFK", "MUC", "LHR", "SFO", "SJC"]
-```
-
-### Ê¾Àý 2:
+### ç¤ºä¾‹ 1:
 
 ```plaintext
-ÊäÈë: [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
-Êä³ö: ["JFK","ATL","JFK","SFO","ATL","SFO"]
+è¾“å…¥: [["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]
+è¾“å‡º: ["JFK", "MUC", "LHR", "SFO", "SJC"]
 ```
 
-#### ½âÊÍ: ÁíÒ»ÖÖÓÐÐ§µÄÐÐ³ÌÊÇ?["JFK","SFO","ATL","JFK","ATL","SFO"]¡£µ«ÊÇËü×ÔÈ»ÅÅÐò¸ü´ó¸ü¿¿ºó¡£
+### ç¤ºä¾‹ 2:
+
+```plaintext
+è¾“å…¥: [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
+è¾“å‡º: ["JFK","ATL","JFK","SFO","ATL","SFO"]
+```
+
+#### è§£é‡Š: å¦ä¸€ç§æœ‰æ•ˆçš„è¡Œç¨‹æ˜¯ ["JFK","SFO","ATL","JFK","ATL","SFO"]ã€‚ä½†æ˜¯å®ƒè‡ªç„¶æŽ’åºæ›´å¤§æ›´é åŽã€‚

@@ -1,16 +1,16 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## ×óÒ¶×ÓÖ®ºÍ
+## å·¦å¶å­ä¹‹å’Œ
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-×óÒ¶×ÓÖ®ºÍ](https://leetcode-cn.com/problems/sum-of-left-leaves/)
+[åŠ›æ‰£-å·¦å¶å­ä¹‹å’Œ](https://leetcode-cn.com/problems/sum-of-left-leaves/)
 
-### ÌâÄ¿ÄÚÈÝ
+### é¢˜ç›®å†…å®¹
 
-¼ÆËã¸ø¶¨¶þ²æÊ÷µÄËùÓÐ×óÒ¶×ÓÖ®ºÍ¡£
+è®¡ç®—ç»™å®šäºŒå‰æ ‘çš„æ‰€æœ‰å·¦å¶å­ä¹‹å’Œã€‚
 
-### Ê¾Àý£º
+### ç¤ºä¾‹ï¼š
 
 ```plaintext
     3
@@ -21,4 +21,4 @@
 
 ```
 
-ÔÚÕâ¸ö¶þ²æÊ÷ÖÐ£¬ÓÐÁ½¸ö×óÒ¶×Ó£¬·Ö±ðÊÇ 9 ºÍ 15£¬ËùÒÔ·µ»Ø 24
+åœ¨è¿™ä¸ªäºŒå‰æ ‘ä¸­ï¼Œæœ‰ä¸¤ä¸ªå·¦å¶å­ï¼Œåˆ†åˆ«æ˜¯ 9 å’Œ 15ï¼Œæ‰€ä»¥è¿”å›ž 24

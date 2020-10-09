@@ -1,44 +1,44 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## ¶þ²æËÑË÷Ê÷µÄ×î½ü¹«¹²×æÏÈ
+## äºŒå‰æœç´¢æ ‘çš„æœ€è¿‘å…¬å…±ç¥–å…ˆ
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-¶þ²æËÑË÷Ê÷µÄ×î½ü¹«¹²×æÏÈ](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+[åŠ›æ‰£-äºŒå‰æœç´¢æ ‘çš„æœ€è¿‘å…¬å…±ç¥–å…ˆ](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 
-### ÌâÄ¿ÄÚÈÝ
+### é¢˜ç›®å†…å®¹
 
-¸ø¶¨Ò»¸ö¶þ²æËÑË÷Ê÷, ÕÒµ½¸ÃÊ÷ÖÐÁ½¸öÖ¸¶¨½ÚµãµÄ×î½ü¹«¹²×æÏÈ¡£
+ç»™å®šä¸€ä¸ªäºŒå‰æœç´¢æ ‘, æ‰¾åˆ°è¯¥æ ‘ä¸­ä¸¤ä¸ªæŒ‡å®šèŠ‚ç‚¹çš„æœ€è¿‘å…¬å…±ç¥–å…ˆã€‚
 
-[°Ù¶È°Ù¿Æ](https://baike.baidu.com/item/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/8918834?fr=aladdin)ÖÐ×î½ü¹«¹²×æÏÈµÄ¶¨ÒåÎª£º¡°¶ÔÓÚÓÐ¸ùÊ÷ T µÄÁ½¸ö½áµã p¡¢q£¬×î½ü¹«¹²×æÏÈ±íÊ¾ÎªÒ»¸ö½áµã x£¬Âú×ã x ÊÇ p¡¢q µÄ×æÏÈÇÒ x µÄÉî¶È¾¡¿ÉÄÜ´ó£¨Ò»¸ö½ÚµãÒ²¿ÉÒÔÊÇËü×Ô¼ºµÄ×æÏÈ£©¡£¡±
+[ç™¾åº¦ç™¾ç§‘](https://baike.baidu.com/item/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/8918834?fr=aladdin)ä¸­æœ€è¿‘å…¬å…±ç¥–å…ˆçš„å®šä¹‰ä¸ºï¼šâ€œå¯¹äºŽæœ‰æ ¹æ ‘ T çš„ä¸¤ä¸ªç»“ç‚¹ pã€qï¼Œæœ€è¿‘å…¬å…±ç¥–å…ˆè¡¨ç¤ºä¸ºä¸€ä¸ªç»“ç‚¹ xï¼Œæ»¡è¶³ x æ˜¯ pã€q çš„ç¥–å…ˆä¸” x çš„æ·±åº¦å°½å¯èƒ½å¤§ï¼ˆä¸€ä¸ªèŠ‚ç‚¹ä¹Ÿå¯ä»¥æ˜¯å®ƒè‡ªå·±çš„ç¥–å…ˆï¼‰ã€‚â€
 
-ÀýÈç£¬¸ø¶¨ÈçÏÂ¶þ²æËÑË÷Ê÷:? `root =?[6,2,8,0,4,7,9,null,null,3,5]`
+ä¾‹å¦‚ï¼Œç»™å®šå¦‚ä¸‹äºŒå‰æœç´¢æ ‘: `root = [6,2,8,0,4,7,9,null,null,3,5]`
 
-![Í¼Æ¬](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/binarysearchtree_improved.png)
+![å›¾ç‰‡](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/binarysearchtree_improved.png)
 
-### Ê¾Àý 1:
-
-```plaintext
-ÊäÈë: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
-Êä³ö: 6
-```
-
-#### ½âÊÍ: 
-
-½Úµã 2 ºÍ½Úµã 8 µÄ×î½ü¹«¹²×æÏÈÊÇ 6¡£
-
-### Ê¾Àý 2:
+### ç¤ºä¾‹ 1:
 
 ```plaintext
-ÊäÈë: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
-Êä³ö: 2
+è¾“å…¥: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+è¾“å‡º: 6
 ```
 
-#### ½âÊÍ: 
+#### è§£é‡Š: 
 
-½Úµã 2 ºÍ½Úµã 4 µÄ×î½ü¹«¹²×æÏÈÊÇ 2, ÒòÎª¸ù¾Ý¶¨Òå×î½ü¹«¹²×æÏÈ½Úµã¿ÉÒÔÎª½Úµã±¾Éí¡£
+èŠ‚ç‚¹ 2 å’ŒèŠ‚ç‚¹ 8 çš„æœ€è¿‘å…¬å…±ç¥–å…ˆæ˜¯ 6ã€‚
 
-### ËµÃ÷:
+### ç¤ºä¾‹ 2:
 
-- ËùÓÐ½ÚµãµÄÖµ¶¼ÊÇÎ¨Ò»µÄ¡£
-- p¡¢q Îª²»Í¬½ÚµãÇÒ¾ù´æÔÚÓÚ¸ø¶¨µÄ¶þ²æËÑË÷Ê÷ÖÐ¡£
+```plaintext
+è¾“å…¥: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+è¾“å‡º: 2
+```
+
+#### è§£é‡Š: 
+
+èŠ‚ç‚¹ 2 å’ŒèŠ‚ç‚¹ 4 çš„æœ€è¿‘å…¬å…±ç¥–å…ˆæ˜¯ 2, å› ä¸ºæ ¹æ®å®šä¹‰æœ€è¿‘å…¬å…±ç¥–å…ˆèŠ‚ç‚¹å¯ä»¥ä¸ºèŠ‚ç‚¹æœ¬èº«ã€‚
+
+### è¯´æ˜Ž:
+
+- æ‰€æœ‰èŠ‚ç‚¹çš„å€¼éƒ½æ˜¯å”¯ä¸€çš„ã€‚
+- pã€q ä¸ºä¸åŒèŠ‚ç‚¹ä¸”å‡å­˜åœ¨äºŽç»™å®šçš„äºŒå‰æœç´¢æ ‘ä¸­ã€‚

@@ -1,23 +1,24 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## µç»°ºÅÂëµÄ×ÖÄ¸×éºÏ
+## ç”µè¯å·ç çš„å­—æ¯ç»„åˆ
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-µç»°ºÅÂëµÄ×ÖÄ¸×éºÏ](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)
+[åŠ›æ‰£-ç”µè¯å·ç çš„å­—æ¯ç»„åˆ](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)
 
-### ÌâÄ¿ÄÚÈÝ
+### é¢˜ç›®å†…å®¹
 
-¸ø¶¨Ò»¸ö½ö°üº¬Êý×Ö?2-9?µÄ×Ö·û´®£¬·µ»ØËùÓÐËüÄÜ±íÊ¾µÄ×ÖÄ¸×éºÏ¡£
+ç»™å®šä¸€ä¸ªä»…åŒ…å«æ•°å­— `2-9` çš„å­—ç¬¦ä¸²ï¼Œè¿”å›žæ‰€æœ‰å®ƒèƒ½è¡¨ç¤ºçš„å­—æ¯ç»„åˆã€‚
 
-¸ø³öÊý×Öµ½×ÖÄ¸µÄÓ³ÉäÈçÏÂ£¨Óëµç»°°´¼üÏàÍ¬£©¡£×¢Òâ 1 ²»¶ÔÓ¦ÈÎºÎ×ÖÄ¸¡£
+ç»™å‡ºæ•°å­—åˆ°å­—æ¯çš„æ˜ å°„å¦‚ä¸‹ï¼ˆä¸Žç”µè¯æŒ‰é”®ç›¸åŒï¼‰ã€‚æ³¨æ„ `1` ä¸å¯¹åº”ä»»ä½•å­—æ¯ã€‚
 
-### Ê¾Àý:
+### ç¤ºä¾‹:
 
 ```plaintext
-ÊäÈë£º"23"
-Êä³ö£º["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+è¾“å…¥ï¼š"23"
+è¾“å‡ºï¼š["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 ```
 
-### ËµÃ÷:
-¾¡¹ÜÉÏÃæµÄ´ð°¸ÊÇ°´×ÖµäÐòÅÅÁÐµÄ£¬µ«ÊÇÄã¿ÉÒÔÈÎÒâÑ¡Ôñ´ð°¸Êä³öµÄË³Ðò¡£
+### è¯´æ˜Ž:
+
+å°½ç®¡ä¸Šé¢çš„ç­”æ¡ˆæ˜¯æŒ‰å­—å…¸åºæŽ’åˆ—çš„ï¼Œä½†æ˜¯ä½ å¯ä»¥ä»»æ„é€‰æ‹©ç­”æ¡ˆè¾“å‡ºçš„é¡ºåºã€‚

@@ -1,14 +1,14 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## Ìî³äÃ¿¸ö½ÚµãµÄÏÂÒ»¸öÓÒ²à½ÚµãÖ¸Õë
+## å¡«å……æ¯ä¸ªèŠ‚ç‚¹çš„ä¸‹ä¸€ä¸ªå³ä¾§èŠ‚ç‚¹æŒ‡é’ˆ
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-Ìî³äÃ¿¸ö½ÚµãµÄÏÂÒ»¸öÓÒ²à½ÚµãÖ¸Õë](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
+[åŠ›æ‰£-å¡«å……æ¯ä¸ªèŠ‚ç‚¹çš„ä¸‹ä¸€ä¸ªå³ä¾§èŠ‚ç‚¹æŒ‡é’ˆ](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
 
-### ÌâÄ¿ÄÚÈİ
+### é¢˜ç›®å†…å®¹
 
-¸ø¶¨Ò»¸öÍêÃÀ¶ş²æÊ÷£¬ÆäËùÓĞÒ¶×Ó½Úµã¶¼ÔÚÍ¬Ò»²ã£¬Ã¿¸ö¸¸½Úµã¶¼ÓĞÁ½¸ö×Ó½Úµã¡£¶ş²æÊ÷¶¨ÒåÈçÏÂ£º
+ç»™å®šä¸€ä¸ªå®Œç¾äºŒå‰æ ‘ï¼Œå…¶æ‰€æœ‰å¶å­èŠ‚ç‚¹éƒ½åœ¨åŒä¸€å±‚ï¼Œæ¯ä¸ªçˆ¶èŠ‚ç‚¹éƒ½æœ‰ä¸¤ä¸ªå­èŠ‚ç‚¹ã€‚äºŒå‰æ ‘å®šä¹‰å¦‚ä¸‹ï¼š
 
 ```cpp
 struct Node {
@@ -19,25 +19,25 @@ struct Node {
 }
 ```
 
-Ìî³äËüµÄÃ¿¸ö `next` Ö¸Õë£¬ÈÃÕâ¸öÖ¸ÕëÖ¸ÏòÆäÏÂÒ»¸öÓÒ²à½Úµã¡£Èç¹ûÕÒ²»µ½ÏÂÒ»¸öÓÒ²à½Úµã£¬Ôò½« `next` Ö¸ÕëÉèÖÃÎª `NULL`¡£
+å¡«å……å®ƒçš„æ¯ä¸ª `next` æŒ‡é’ˆï¼Œè®©è¿™ä¸ªæŒ‡é’ˆæŒ‡å‘å…¶ä¸‹ä¸€ä¸ªå³ä¾§èŠ‚ç‚¹ã€‚å¦‚æœæ‰¾ä¸åˆ°ä¸‹ä¸€ä¸ªå³ä¾§èŠ‚ç‚¹ï¼Œåˆ™å°† `next` æŒ‡é’ˆè®¾ç½®ä¸º `NULL`ã€‚
 
-³õÊ¼×´Ì¬ÏÂ£¬ËùÓĞ?`next` Ö¸Õë¶¼±»ÉèÖÃÎª `NULL`¡£
+åˆå§‹çŠ¶æ€ä¸‹ï¼Œæ‰€æœ‰ `next` æŒ‡é’ˆéƒ½è¢«è®¾ç½®ä¸º `NULL`ã€‚
 
-### Ê¾Àı£º
+### ç¤ºä¾‹ï¼š
 
 ```plaintext
-ÊäÈë£º{"$id":"1","left":{"$id":"2","left":{"$id":"3","left":null,"next":null,"right":null,"val":4},"next":null,"right":{"$id":"4","left":null,"next":null,"right":null,"val":5},"val":2},"next":null,"right":{"$id":"5","left":{"$id":"6","left":null,"next":null,"right":null,"val":6},"next":null,"right":{"$id":"7","left":null,"next":null,"right":null,"val":7},"val":3},"val":1}
+è¾“å…¥ï¼š{"$id":"1","left":{"$id":"2","left":{"$id":"3","left":null,"next":null,"right":null,"val":4},"next":null,"right":{"$id":"4","left":null,"next":null,"right":null,"val":5},"val":2},"next":null,"right":{"$id":"5","left":{"$id":"6","left":null,"next":null,"right":null,"val":6},"next":null,"right":{"$id":"7","left":null,"next":null,"right":null,"val":7},"val":3},"val":1}
 
-Êä³ö£º{"$id":"1","left":{"$id":"2","left":{"$id":"3","left":null,"next":{"$id":"4","left":null,"next":{"$id":"5","left":null,"next":{"$id":"6","left":null,"next":null,"right":null,"val":7},"right":null,"val":6},"right":null,"val":5},"right":null,"val":4},"next":{"$id":"7","left":{"$ref":"5"},"next":null,"right":{"$ref":"6"},"val":3},"right":{"$ref":"4"},"val":2},"next":null,"right":{"$ref":"7"},"val":1}
+è¾“å‡ºï¼š{"$id":"1","left":{"$id":"2","left":{"$id":"3","left":null,"next":{"$id":"4","left":null,"next":{"$id":"5","left":null,"next":{"$id":"6","left":null,"next":null,"right":null,"val":7},"right":null,"val":6},"right":null,"val":5},"right":null,"val":4},"next":{"$id":"7","left":{"$ref":"5"},"next":null,"right":{"$ref":"6"},"val":3},"right":{"$ref":"4"},"val":2},"next":null,"right":{"$ref":"7"},"val":1}
 ```
 
-![Ê¾ÀıÍ¼](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/15/116_sample.png)
+![ç¤ºä¾‹å›¾](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/15/116_sample.png)
 
-#### ½âÊÍ£º
+#### è§£é‡Šï¼š
 
-¸ø¶¨¶ş²æÊ÷ÈçÍ¼ A ËùÊ¾£¬ÄãµÄº¯ÊıÓ¦¸ÃÌî³äËüµÄÃ¿¸ö `next` Ö¸Õë£¬ÒÔÖ¸ÏòÆäÏÂÒ»¸öÓÒ²à½Úµã£¬ÈçÍ¼ B ËùÊ¾¡£
+ç»™å®šäºŒå‰æ ‘å¦‚å›¾ A æ‰€ç¤ºï¼Œä½ çš„å‡½æ•°åº”è¯¥å¡«å……å®ƒçš„æ¯ä¸ª `next` æŒ‡é’ˆï¼Œä»¥æŒ‡å‘å…¶ä¸‹ä¸€ä¸ªå³ä¾§èŠ‚ç‚¹ï¼Œå¦‚å›¾ B æ‰€ç¤ºã€‚
 
-### ÌáÊ¾£º
+### æç¤ºï¼š
 
-- ÄãÖ»ÄÜÊ¹ÓÃ³£Á¿¼¶¶îÍâ¿Õ¼ä¡£
-- Ê¹ÓÃµİ¹é½âÌâÒ²·ûºÏÒªÇó£¬±¾ÌâÖĞµİ¹é³ÌĞòÕ¼ÓÃµÄÕ»¿Õ¼ä²»Ëã×ö¶îÍâµÄ¿Õ¼ä¸´ÔÓ¶È¡£
+- ä½ åªèƒ½ä½¿ç”¨å¸¸é‡çº§é¢å¤–ç©ºé—´ã€‚
+- ä½¿ç”¨é€’å½’è§£é¢˜ä¹Ÿç¬¦åˆè¦æ±‚ï¼Œæœ¬é¢˜ä¸­é€’å½’ç¨‹åºå ç”¨çš„æ ˆç©ºé—´ä¸ç®—åšé¢å¤–çš„ç©ºé—´å¤æ‚åº¦ã€‚

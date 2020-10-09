@@ -10,9 +10,9 @@ os.mkdir(dir_path)
 content = '# 题目\n\n## {0}\n\n### 来源:\n\n[力扣-{0}]({1})\n\n### 题目内容'.format(
     item_name, item_url)
 
-with open(dir_path + '/README.md', 'w') as f:
+with open(dir_path + '/README.md', 'w', encoding='utf-8') as f:
     f.write(content)
 
 with open(dir_path + '/' + item_url.split('/')[-2].replace('-', '') + '.py',
-          'w') as f:
+          'w', encoding='utf-8') as f:
     f.write('# ')

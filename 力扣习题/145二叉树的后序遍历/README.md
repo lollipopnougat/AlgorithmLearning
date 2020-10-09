@@ -1,28 +1,28 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## ¶þ²æÊ÷µÄºóÐò±éÀú
+## äºŒå‰æ ‘çš„åŽåºéåŽ†
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-¶þ²æÊ÷µÄºóÐò±éÀú](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
+[åŠ›æ‰£-äºŒå‰æ ‘çš„åŽåºéåŽ†](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
 
-### ÌâÄ¿ÄÚÈÝ
+### é¢˜ç›®å†…å®¹
 
-¸ø¶¨Ò»¸ö¶þ²æÊ÷£¬·µ»ØËüµÄ ºóÐò ±éÀú¡£
+ç»™å®šä¸€ä¸ªäºŒå‰æ ‘ï¼Œè¿”å›žå®ƒçš„ åŽåº éåŽ†ã€‚
 
-### Ê¾Àý:
+### ç¤ºä¾‹:
 
 ```plaintext
-ÊäÈë: [1,null,2,3]  
+è¾“å…¥: [1,null,2,3]  
    1
     \
      2
     /
-   3 
+   3
 
-Êä³ö: [3,2,1]
+è¾“å‡º: [3,2,1]
 ```
 
-### ½ø½×:?
+### è¿›é˜¶:
 
-µÝ¹éËã·¨ºÜ¼òµ¥£¬Äã¿ÉÒÔÍ¨¹ýµü´úËã·¨Íê³ÉÂð£¿
+é€’å½’ç®—æ³•å¾ˆç®€å•ï¼Œä½ å¯ä»¥é€šè¿‡è¿­ä»£ç®—æ³•å®Œæˆå—ï¼Ÿ

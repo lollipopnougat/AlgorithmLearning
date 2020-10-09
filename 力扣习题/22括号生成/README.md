@@ -1,20 +1,20 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## À¨ºÅÉú³É
+## æ‹¬å·ç”Ÿæˆ
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-À¨ºÅÉú³É](https://leetcode-cn.com/problems/generate-parentheses/)
+[åŠ›æ‰£-æ‹¬å·ç”Ÿæˆ](https://leetcode-cn.com/problems/generate-parentheses/)
 
-### ÌâÄ¿ÄÚÈÝ
+### é¢˜ç›®å†…å®¹
 
-Êý×Ö `n`?´ú±íÉú³ÉÀ¨ºÅµÄ¶ÔÊý£¬ÇëÄãÉè¼ÆÒ»¸öº¯Êý£¬ÓÃÓÚÄÜ¹»Éú³ÉËùÓÐ¿ÉÄÜµÄ²¢ÇÒ `ÓÐÐ§µÄ` À¨ºÅ×éºÏ¡£
+æ•°å­— `n` ä»£è¡¨ç”Ÿæˆæ‹¬å·çš„å¯¹æ•°ï¼Œè¯·ä½ è®¾è®¡ä¸€ä¸ªå‡½æ•°ï¼Œç”¨äºŽèƒ½å¤Ÿç”Ÿæˆæ‰€æœ‰å¯èƒ½çš„å¹¶ä¸” `æœ‰æ•ˆçš„` æ‹¬å·ç»„åˆã€‚
 
-### Ê¾Àý£º
+### ç¤ºä¾‹ï¼š
 
 ```plaintext
-ÊäÈë£ºn = 3
-Êä³ö£º[
+è¾“å…¥ï¼šn = 3
+è¾“å‡ºï¼š[
        "((()))",
        "(()())",
        "(())()",

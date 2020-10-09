@@ -1,82 +1,81 @@
-# ��Ŀ
+# 题目
 
-## ��¡ͼ
+## 克隆图
 
-### ��Դ:
+### 来源:
 
-[����-��¡ͼ](https://leetcode-cn.com/problems/clone-graph/)
+[力扣-克隆图](https://leetcode-cn.com/problems/clone-graph/)
 
-### ��Ŀ����
+### 题目内容
 
-��������?��ͨ?ͼ��һ���ڵ�����ã����㷵�ظ�ͼ��?�������¡����
+给你无向 **连通** 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。
 
-ͼ�е�ÿ���ڵ㶼��������ֵ val��int�� �����ھӵ��б���list[Node]����
+图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。
 
 class Node {
     public int val;
     public List<Node> neighbors;
 }
-?
 
-����������ʽ��
+### 测试用例格式：
 
-�������ÿ���ڵ��ֵ��������������ͬ�����磬��һ���ڵ�ֵΪ 1��val = 1�����ڶ����ڵ�ֵΪ 2��val = 2�����Դ����ơ���ͼ�ڲ���������ʹ���ڽ��б���ʾ��
+简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val = 1），第二个节点值为 2（val = 2），以此类推。该图在测试用例中使用邻接列表表示。
 
-�ڽ��б� �����ڱ�ʾ����ͼ�������б��ļ��ϡ�ÿ���б���������ͼ�нڵ���ھӼ���
+邻接列表 是用于表示有限图的无序列表的集合。每个列表都描述了图中节点的邻居集。
 
-�����ڵ㽫ʼ����ͼ�еĵ�һ���ڵ㣨ֵΪ 1��������뽫?�����ڵ�Ŀ���?��Ϊ�Կ�¡ͼ�����÷��ء�
+给定节点将始终是图中的第一个节点（值为 1）。你必须将 给定节点的拷贝 作为对克隆图的引用返回。
 
-### ʾ�� 1��
+### 示例 1：
 
-![ʾ��1](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/02/01/133_clone_graph_question.png)
-
-```plaintext
-���룺adjList = [[2,4],[1,3],[2,4],[1,3]]
-�����[[2,4],[1,3],[2,4],[1,3]]
-```
-
-���ͣ�
-
-ͼ���� 4 ���ڵ㡣
-
-- �ڵ� 1 ��ֵ�� 1�����������ھӣ��ڵ� 2 �� 4 ��
-- �ڵ� 2 ��ֵ�� 2�����������ھӣ��ڵ� 1 �� 3 ��
-- �ڵ� 3 ��ֵ�� 3�����������ھӣ��ڵ� 2 �� 4 ��
-- �ڵ� 4 ��ֵ�� 4�����������ھӣ��ڵ� 1 �� 3 ��
-
-### ʾ�� 2��
-
-![ʾ��2](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/02/01/graph.png)
+![示例1](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/02/01/133_clone_graph_question.png)
 
 ```plaintext
-���룺adjList = [[]]
-�����[[]]
+输入：adjList = [[2,4],[1,3],[2,4],[1,3]]
+输出：[[2,4],[1,3],[2,4],[1,3]]
 ```
 
-���ͣ��������һ�����б�����ͼ����ֻ��һ��ֵΪ 1 �Ľڵ㣬��û���κ��ھӡ�
+解释：
 
-### ʾ�� 3��
+图中有 4 个节点。
+
+- 节点 1 的值是 1，它有两个邻居：节点 2 和 4 。
+- 节点 2 的值是 2，它有两个邻居：节点 1 和 3 。
+- 节点 3 的值是 3，它有两个邻居：节点 2 和 4 。
+- 节点 4 的值是 4，它有两个邻居：节点 1 和 3 。
+
+### 示例 2：
+
+![示例2](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/02/01/graph.png)
 
 ```plaintext
-���룺adjList = []
-�����[]
+输入：adjList = [[]]
+输出：[[]]
 ```
 
-���ͣ����ͼ�ǿյģ��������κνڵ㡣
+解释：输入包含一个空列表。该图仅仅只有一个值为 1 的节点，它没有任何邻居。
 
-### ʾ�� 4��
-
-![ʾ��4](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/02/01/graph-1.png)
+### 示例 3：
 
 ```plaintext
-���룺adjList = [[2],[1]]
-�����[[2],[1]]
+输入：adjList = []
+输出：[]
 ```
 
-### ��ʾ��
+解释：这个图是空的，它不含任何节点。
 
-- �ڵ��������� 100 ��
-- ÿ���ڵ�ֵ?Node.val ����Ψһ�ģ�1 <= Node.val <= 100��
-- ����ͼ��һ����ͼ������ζ��ͼ��û���ظ��ıߣ�Ҳû���Ի���
-- ����ͼ������ģ�����ڵ� p �ǽڵ� q ���ھӣ���ô�ڵ� q Ҳ�����ǽڵ� p?���ھӡ�
-- ͼ����ͨͼ������ԴӸ����ڵ���ʵ����нڵ㡣
+### 示例 4：
+
+![示例4](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/02/01/graph-1.png)
+
+```plaintext
+输入：adjList = [[2],[1]]
+输出：[[2],[1]]
+```
+
+### 提示：
+
+- 节点数不超过 100 。
+- 每个节点值 Node.val 都是唯一的，1 <= Node.val <= 100。
+- 无向图是一个简单图，这意味着图中没有重复的边，也没有自环。
+- 由于图是无向的，如果节点 p 是节点 q 的邻居，那么节点 q 也必须是节点 p 的邻居。
+- 图是连通图，你可以从给定节点访问到所有节点。

@@ -58,7 +58,7 @@ class Graph:
     def dfs(self, ndnm:str):
         res = []
         if self.has_node(ndnm):
-            vistied = {}
+            vistied = set()
             stack = [ndnm]
             while len(stack) != 0:
                 ndnm = stack.pop()
@@ -66,14 +66,14 @@ class Graph:
                 if not ndnm in vistied:
                     res.append(tmp_node)
                     stack.extend(tmp_node.linked_nodes)
-                    vistied[ndnm] = True
+                    vistied.add(ndnm)
         return res
 
     def bfs(self, ndnm:str):
         res = []
         if self.has_node(
             ndnm):
-            vistied = {}
+            vistied = set()
             queue = [ndnm]
             while len(queue) != 0:
                 ndnm = queue.pop(0)
@@ -81,7 +81,7 @@ class Graph:
                     tmp_node = self.node_map[ndnm]
                     res.append(tmp_node)
                     queue.extend(tmp_node.linked_nodes)
-                    vistied[ndnm] = True
+                    vistied.add(ndnm)
         return res
 
 g = Graph()

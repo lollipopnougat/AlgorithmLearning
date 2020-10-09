@@ -1,3 +1,9 @@
+# matrix.py
+''' 
+Auth: lollipopnougat
+Date: 2020.10.05
+Encoding: UTF-8
+'''
 class matrix:
     # 构造矩阵对象 m: 行数 n: 列数
     def __init__(self, m: int, n: int) -> None:
@@ -103,6 +109,21 @@ class matrix:
             tmp.mat[i][i] = 1
         return tmp
 
+    # 静态方法: 获取 n 阶0阵
+    @staticmethod
+    def zeros(n:int):
+        tmp = matrix(n, n)
+        return tmp
+    
+    # 静态方法: 获取 n 阶1阵
+    @staticmethod
+    def ones(n:int):
+        tmp = matrix(n, n)
+        for i in range(n):
+            for j in range(n):
+                tmp.mat[i][j] = 1
+        return tmp
+
     # 静态方法: 获取矩阵的秩
     @staticmethod
     def get_rank(ma):
@@ -130,6 +151,7 @@ class matrix:
     def __getitem__(self, key: int) -> list:
         return self.mat[key]
 
+    # 设置元素
     def __setitem__(self, key: int, val: list):
         self.mat[key] = val
 
@@ -170,7 +192,7 @@ class matrix:
     def __len__(self):
         return self.rows * self.cols
 
-    # 重载 * 运算符
+    # 重载 * 运算符(右乘)
     def __mul__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return matrix.from_list([[i * other for i in j] for j in self.mat])
@@ -184,6 +206,10 @@ class matrix:
                         tmp[i][j] += self.mat[i][k] * other[k][j]
             return tmp
 
+    # 重载 * 运算符(左乘)
+    def __rmul__(self, other: int or float):
+        return matrix.from_list([[i * other for i in j] for j in self.mat])
+
     # 重载 - 运算符
     def __sub__(self, other):
         return self.__add__(other * -1)
@@ -195,6 +221,10 @@ class matrix:
         else:
             return self.__mul__(matrix.get_inverse(other))
 
+    # 重载 / 运算符(左除？)
+    def __rtruediv__(self, other: int or float):
+        return matrix.from_list([[i / other for i in j] for j in self.mat])
+
     # 重载 == 运算符
     def __eq__(self, other) -> bool:
         return self.to_list() == other.to_list()
@@ -202,6 +232,10 @@ class matrix:
     # 重载 != 运算符
     def __ne__(self, other) -> bool:
         return self.to_list() != other.to_list()
+
+    # 重载 ~ 运算符(逆矩阵)
+    def __invert__(self):
+        return matrix.get_inverse(self)
 
     # 重载 in 成员操作符
     def __contains__(self, key) -> bool:
@@ -234,6 +268,7 @@ if __name__ == "__main__":
     # print('')
     print(matrix.get_rank(m6))
     print(m2 == m3)
+    print(~m1)
     #print(matrix.is_identity(m2))
     print('')
     s = m1.copy()

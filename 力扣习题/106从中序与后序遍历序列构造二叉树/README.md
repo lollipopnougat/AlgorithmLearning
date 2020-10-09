@@ -1,25 +1,25 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## ´ÓÖÐÐòÓëºóÐò±éÀúÐòÁÐ¹¹Ôì¶þ²æÊ÷
+## ä»Žä¸­åºä¸ŽåŽåºéåŽ†åºåˆ—æž„é€ äºŒå‰æ ‘
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-´ÓÖÐÐòÓëºóÐò±éÀúÐòÁÐ¹¹Ôì¶þ²æÊ÷](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+[åŠ›æ‰£-ä»Žä¸­åºä¸ŽåŽåºéåŽ†åºåˆ—æž„é€ äºŒå‰æ ‘](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 
-### ÌâÄ¿ÄÚÈÝ
+### é¢˜ç›®å†…å®¹
 
-¸ù¾ÝÒ»¿ÃÊ÷µÄÖÐÐò±éÀúÓëºóÐò±éÀú¹¹Ôì¶þ²æÊ÷¡£
+æ ¹æ®ä¸€æ£µæ ‘çš„ä¸­åºéåŽ†ä¸ŽåŽåºéåŽ†æž„é€ äºŒå‰æ ‘ã€‚
 
-### ×¢Òâ:
+### æ³¨æ„:
 
-Äã¿ÉÒÔ¼ÙÉèÊ÷ÖÐÃ»ÓÐÖØ¸´µÄÔªËØ¡£
+ä½ å¯ä»¥å‡è®¾æ ‘ä¸­æ²¡æœ‰é‡å¤çš„å…ƒç´ ã€‚
 
-### ÀýÈç£¬¸ø³ö
+### ä¾‹å¦‚ï¼Œç»™å‡º
 
 ```plaintext
-ÖÐÐò±éÀú inorder =?[9,3,15,20,7]
-ºóÐò±éÀú postorder = [9,15,7,20,3]
-·µ»ØÈçÏÂµÄ¶þ²æÊ÷£º
+ä¸­åºéåŽ† inorder = [9,3,15,20,7]
+åŽåºéåŽ† postorder = [9,15,7,20,3]
+è¿”å›žå¦‚ä¸‹çš„äºŒå‰æ ‘ï¼š
 
     3
    / \

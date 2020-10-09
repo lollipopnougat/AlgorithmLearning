@@ -1,37 +1,37 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## LRU»º´æ»úÖÆ
+## LRUç¼“å­˜æœºåˆ¶
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-LRU»º´æ»úÖÆ](https://leetcode-cn.com/problems/lru-cache/)
+[åŠ›æ‰£-LRUç¼“å­˜æœºåˆ¶](https://leetcode-cn.com/problems/lru-cache/)
 
-### ÌâÄ¿ÄÚÈÝ
+### é¢˜ç›®å†…å®¹
 
-ÔËÓÃÄãËùÕÆÎÕµÄÊý¾Ý½á¹¹£¬Éè¼ÆºÍÊµÏÖÒ»¸ö? `LRU (×î½ü×îÉÙÊ¹ÓÃ)` »º´æ»úÖÆ¡£ËüÓ¦¸ÃÖ§³ÖÒÔÏÂ²Ù×÷£º »ñÈ¡Êý¾Ý `get` ºÍ Ð´ÈëÊý¾Ý `put` ¡£
+è¿ç”¨ä½ æ‰€æŽŒæ¡çš„æ•°æ®ç»“æž„ï¼Œè®¾è®¡å’Œå®žçŽ°ä¸€ä¸ª  `LRU (æœ€è¿‘æœ€å°‘ä½¿ç”¨)` ç¼“å­˜æœºåˆ¶ã€‚å®ƒåº”è¯¥æ”¯æŒä»¥ä¸‹æ“ä½œï¼š èŽ·å–æ•°æ® `get` å’Œ å†™å…¥æ•°æ® `put` ã€‚
 
-- »ñÈ¡Êý¾Ý `get(key)` 
-    - Èç¹û¹Ø¼ü×Ö `(key)` ´æÔÚÓÚ»º´æÖÐ£¬Ôò»ñÈ¡¹Ø¼ü×ÖµÄÖµ£¨×ÜÊÇÕýÊý£©£¬·ñÔò·µ»Ø `-1`¡£
-- Ð´ÈëÊý¾Ý `put(key, value)` 
-    - Èç¹û¹Ø¼ü×ÖÒÑ¾­´æÔÚ£¬Ôò±ä¸üÆäÊý¾ÝÖµ£»Èç¹û¹Ø¼ü×Ö²»´æÔÚ£¬Ôò²åÈë¸Ã×é¡¸¹Ø¼ü×Ö/Öµ¡¹¡£
-    - µ±»º´æÈÝÁ¿´ïµ½ÉÏÏÞÊ±£¬ËüÓ¦¸ÃÔÚÐ´ÈëÐÂÊý¾ÝÖ®Ç°É¾³ý×î¾ÃÎ´Ê¹ÓÃµÄÊý¾ÝÖµ£¬´Ó¶øÎªÐÂµÄÊý¾ÝÖµÁô³ö¿Õ¼ä¡£
+- èŽ·å–æ•°æ® `get(key)` 
+    - å¦‚æžœå…³é”®å­— `(key)` å­˜åœ¨äºŽç¼“å­˜ä¸­ï¼Œåˆ™èŽ·å–å…³é”®å­—çš„å€¼ï¼ˆæ€»æ˜¯æ­£æ•°ï¼‰ï¼Œå¦åˆ™è¿”å›ž `-1`ã€‚
+- å†™å…¥æ•°æ® `put(key, value)` 
+    - å¦‚æžœå…³é”®å­—å·²ç»å­˜åœ¨ï¼Œåˆ™å˜æ›´å…¶æ•°æ®å€¼ï¼›å¦‚æžœå…³é”®å­—ä¸å­˜åœ¨ï¼Œåˆ™æ’å…¥è¯¥ç»„ã€Œå…³é”®å­—/å€¼ã€ã€‚
+    - å½“ç¼“å­˜å®¹é‡è¾¾åˆ°ä¸Šé™æ—¶ï¼Œå®ƒåº”è¯¥åœ¨å†™å…¥æ–°æ•°æ®ä¹‹å‰åˆ é™¤æœ€ä¹…æœªä½¿ç”¨çš„æ•°æ®å€¼ï¼Œä»Žè€Œä¸ºæ–°çš„æ•°æ®å€¼ç•™å‡ºç©ºé—´ã€‚
 
-### ½ø½×:
+### è¿›é˜¶:
 
-ÄãÊÇ·ñ¿ÉÒÔÔÚ?O(1) Ê±¼ä¸´ÔÓ¶ÈÄÚÍê³ÉÕâÁ½ÖÖ²Ù×÷£¿
+ä½ æ˜¯å¦å¯ä»¥åœ¨ O(1) æ—¶é—´å¤æ‚åº¦å†…å®Œæˆè¿™ä¸¤ç§æ“ä½œï¼Ÿ
 
-### Ê¾Àý:
+### ç¤ºä¾‹:
 
 ```java
-LRUCache cache = new LRUCache( 2 /* »º´æÈÝÁ¿ */ );
+LRUCache cache = new LRUCache( 2 /* ç¼“å­˜å®¹é‡ */ );
 
 cache.put(1, 1);
 cache.put(2, 2);
-cache.get(1);       // ·µ»Ø  1
-cache.put(3, 3);    // ¸Ã²Ù×÷»áÊ¹µÃ¹Ø¼ü×Ö 2 ×÷·Ï
-cache.get(2);       // ·µ»Ø -1 (Î´ÕÒµ½)
-cache.put(4, 4);    // ¸Ã²Ù×÷»áÊ¹µÃ¹Ø¼ü×Ö 1 ×÷·Ï
-cache.get(1);       // ·µ»Ø -1 (Î´ÕÒµ½)
-cache.get(3);       // ·µ»Ø  3
-cache.get(4);       // ·µ»Ø  4
+cache.get(1);       // è¿”å›ž  1
+cache.put(3, 3);    // è¯¥æ“ä½œä¼šä½¿å¾—å…³é”®å­— 2 ä½œåºŸ
+cache.get(2);       // è¿”å›ž -1 (æœªæ‰¾åˆ°)
+cache.put(4, 4);    // è¯¥æ“ä½œä¼šä½¿å¾—å…³é”®å­— 1 ä½œåºŸ
+cache.get(1);       // è¿”å›ž -1 (æœªæ‰¾åˆ°)
+cache.get(3);       // è¿”å›ž  3
+cache.get(4);       // è¿”å›ž  4
 ```

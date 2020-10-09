@@ -98,9 +98,7 @@ class HumanPlayer(Player):
     def think(self, board):
         while True:
             action = input('Please input a num in 0-8:')
-            if len(action
-                   ) == 1 and action in '012345678' and board.is_legal_action(
-                       int(action)):
+            if len(action) == 1 and action in '012345678' and board.is_legal_action(int(action)):
                 return int(action)
 
 

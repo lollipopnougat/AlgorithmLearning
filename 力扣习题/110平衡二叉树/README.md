@@ -1,36 +1,36 @@
-# ÌâÄ¿
+# é¢˜ç›®
 
-## Æ½ºâ¶þ²æÊ÷
+## å¹³è¡¡äºŒå‰æ ‘
 
-### À´Ô´:
+### æ¥æº:
 
-[Á¦¿Û-Æ½ºâ¶þ²æÊ÷](https://leetcode-cn.com/problems/balanced-binary-tree/)
+[åŠ›æ‰£-å¹³è¡¡äºŒå‰æ ‘](https://leetcode-cn.com/problems/balanced-binary-tree/)
 
-### ÌâÄ¿ÄÚÈÝ
+### é¢˜ç›®å†…å®¹
 
-¸ø¶¨Ò»¸ö¶þ²æÊ÷£¬ÅÐ¶ÏËüÊÇ·ñÊÇ¸ß¶ÈÆ½ºâµÄ¶þ²æÊ÷¡£
+ç»™å®šä¸€ä¸ªäºŒå‰æ ‘ï¼Œåˆ¤æ–­å®ƒæ˜¯å¦æ˜¯é«˜åº¦å¹³è¡¡çš„äºŒå‰æ ‘ã€‚
 
-±¾ÌâÖÐ£¬Ò»¿Ã¸ß¶ÈÆ½ºâ¶þ²æÊ÷¶¨ÒåÎª£º
+æœ¬é¢˜ä¸­ï¼Œä¸€æ£µé«˜åº¦å¹³è¡¡äºŒå‰æ ‘å®šä¹‰ä¸ºï¼š
 
-Ò»¸ö¶þ²æÊ÷Ã¿¸ö½Úµã?µÄ×óÓÒÁ½¸ö×ÓÊ÷µÄ¸ß¶È²îµÄ¾ø¶ÔÖµ²»³¬¹ý1¡£
+ä¸€ä¸ªäºŒå‰æ ‘æ¯ä¸ªèŠ‚ç‚¹çš„å·¦å³ä¸¤ä¸ªå­æ ‘çš„é«˜åº¦å·®çš„ç»å¯¹å€¼ä¸è¶…è¿‡1ã€‚
 
-### Ê¾Àý 1:
+### ç¤ºä¾‹ 1:
 
 ```plaintext
-¸ø¶¨¶þ²æÊ÷ [3,9,20,null,null,15,7]
+ç»™å®šäºŒå‰æ ‘ [3,9,20,null,null,15,7]
 
     3
    / \
   9  20
     /  \
    15   7
-·µ»Ø true 
+è¿”å›ž true
 ```
 
-### Ê¾Àý 2:
+### ç¤ºä¾‹ 2:
 
 ```plaintext
-¸ø¶¨¶þ²æÊ÷ [1,2,2,3,3,null,null,4,4]
+ç»™å®šäºŒå‰æ ‘ [1,2,2,3,3,null,null,4,4]
 
        1
       / \
@@ -39,5 +39,5 @@
    3   3
   / \
  4   4
-·µ»Ø?false ¡£
+è¿”å›ž false ã€‚
 ```
