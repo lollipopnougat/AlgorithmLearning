@@ -25,13 +25,15 @@ def lcs_len(list_x, list_y) -> value:
                 res.array_b[i][j] = 3
     return res
 
+result = []
 
 def lcs_r(i, j, list_x, res: value):
     if i == 0 or j == 0:
         return
     if res.array_b[i][j] == 1:
         lcs_r(i - 1, j - 1, list_x, res)
-        print(list_x[i])
+        #print(list_x[i])
+        result.append(list_x[i])
     elif res.array_b[i][j] == 2:
         lcs_r(i - 1, j, list_x, res)
     else:
@@ -39,14 +41,17 @@ def lcs_r(i, j, list_x, res: value):
 
 
 def get_lcs(list_x, list_y):
+    global result
+    result = []
     list_x.insert(0, ' ')
     list_y.insert(0, ' ')
     m = len(list_x) - 1
     n = len(list_y) - 1
     tmp = lcs_len(list_x, list_y)
     lcs_r(m, n, list_x, tmp)
-    del (list_x[0])
-    del (list_y[0])
+    list_x.pop(0)
+    list_y.pop(0)
+    print(result)
 
 
 l1 = ['A', 'B', 'C', 'B', 'D', 'A', 'B']

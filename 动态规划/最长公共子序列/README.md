@@ -58,8 +58,8 @@ class value:
     array_b = None
     array_c = None
     def __init__(self,m,n):
-        self.array_b = [[0 for i in range(m)] for j in range(n)]
-        self.array_c = [[0 for i in range(m)] for j in range(n)]
+        self.array_b = [([0] * m) for _ in range(n)]
+        self.array_c = [([0] * m) for _ in range(n)]
 
 def ics_len(list_x,list_y, res:value) -> value:
     m = len(list_x)
@@ -106,4 +106,4 @@ def lcs_r(i, j, list_x, res: value):
 
 上述算法每一次递归使 `i` 或 `j` 减1，因此算法的计算时间为 `O(m + n)`
 
-## 具体实现算法请看 `implement.py`
+## 具体实现算法请看 `LCS.py`

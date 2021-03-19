@@ -59,7 +59,10 @@ class AVL:
         while p.right and p.val < val:
             p = p.right
         if p.val == val:
+            pass
 
+    def rotate(self):
+        pass
         
 
     

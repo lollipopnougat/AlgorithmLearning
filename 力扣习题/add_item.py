@@ -1,5 +1,7 @@
 import os
-
+import re
+if not re.search('力扣习题', os.getcwd()):
+    os.chdir('力扣习题')
 item_no = input('请输入题目编号. 名称: ')
 item_name = item_no.split('. ')[-1]
 item_no = item_no.split('. ')[0]

@@ -16,11 +16,7 @@ def minmax(board, player, opp, curr, depth):
 
     for move in moves:
         ns = next_status(board, curr, move[0], move[1])
-        score, _ = minmax(ns,
-                          player,
-                          opp,
-                          curr=opp if curr == player else player,
-                          depth=depth - 1)
+        score, _ = minmax(ns, player, opp, curr=opp if curr == player else player, depth=depth - 1)
 
         if curr == player:
             if score > alpha:
@@ -44,11 +40,7 @@ def negmax(board, player, opp, curr, depth, neg):
     alpha = -float('inf')
     for move in moves:
         ns = next_status(board, curr, move[0], move[1])
-        score, _ = minmax(ns,
-                          player,
-                          opp,
-                          curr=opp if curr == player else player,
-                          depth=depth - 1)
+        score, _ = minmax(ns, player, opp, curr=opp if curr == player else player, depth=depth - 1)
         if score < alpha:
             alpha = -score
             move_to_return = move
@@ -64,13 +56,7 @@ def ab_minmax(board, player, opp, curr, depth, alpha, beta):
     move_to_return = None
     for move in moves:
         ns = next_status(board, curr, move[0], move[1])
-        score, _ = ab_minmax(ns,
-                             player,
-                             opp,
-                             curr=opp if curr == player else player,
-                             depth=depth - 1,
-                             alpha=alpha,
-                             beta=beta)
+        score, _ = ab_minmax(ns, player, opp, curr=opp if curr == player else player, depth=depth - 1, alpha=alpha, beta=beta)
         if curr == player:
             if score > alpha:
                 alpha = score

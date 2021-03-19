@@ -81,4 +81,6 @@ class Solutiono:
             step += 1
         return True
     
-        
+s = Solution()
+
+print(s.totalNQueens(8))
