@@ -14,3 +14,4 @@ class Solution:
                 return False
             can_reach = max(can_reach, i + nums[i])
         return True
+        
