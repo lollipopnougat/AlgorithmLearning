@@ -1,6 +1,7 @@
 import requests
 import json
 import datetime
+import  html2text as ht
 
 user_agent = r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.75'
 session = requests.Session()
@@ -63,6 +64,7 @@ print(f'今日每日一题: {res["translatedTitle"]}, 难度: {res["difficulty"]
 #     f.write(f'# {res["translatedTitle"]}\n### 难度 {res["difficulty"]}\n{res["translatedContent"]}')
 
 # print(f'题目描述已经保存到 {file_name}')
-print(res['translatedContent'])
+md = ht.html2text(res['translatedContent'])
+print(md)
 
 input('press any key to continue')

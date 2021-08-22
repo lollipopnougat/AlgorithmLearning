@@ -2,6 +2,8 @@ import os
 import re
 import requests
 import json
+import  html2text as ht
+
 user_agent = r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.75'
 session = requests.Session()
 leetcode_gql_url = 'https://leetcode-cn.com/graphql'
@@ -50,8 +52,11 @@ if os.path.exists(dir_path):
     input('题目已存在, 退出\n')
 os.mkdir(dir_path)
 
-content = '# 题目\n\n## {0}\n\n### 来源:\n\n[力扣-{0}]({1})\n\n### 题目内容'.format(
+content = '# 题目\n\n## {0}\n\n### 来源:\n\n[力扣-{0}]({1})\n\n### 题目内容\n\n'.format(
     item_name, item_url)
+
+content += ht.html2text(data['translatedContent'])
+
 
 with open(dir_path + '/README.md', 'w', encoding='utf-8') as f:
     f.write(content)
