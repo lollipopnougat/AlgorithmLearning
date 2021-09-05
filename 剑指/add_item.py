@@ -12,7 +12,9 @@ headers = {
     'Connection': 'keep-alive',
     'Content-Type': 'application/json'
 }
-folder_name = '力扣习题'
+
+folder_name = '剑指'
+
 pic_pattern = re.compile('(https?://.+\.(?:png|jpg))')
 
 def get_problem_by_slug(slug):
@@ -43,7 +45,6 @@ if not re.search(folder_name, os.getcwd()):
         os.chdir(folder_name)
     else:
         os.mkdir(folder_name)
-        os.chdir(folder_name)
 
 # item_no = input('请输入题目编号. 名称: ')
 # item_name = item_no.split('. ')[-1]
@@ -51,7 +52,7 @@ if not re.search(folder_name, os.getcwd()):
 item_url = input('请输入题目url: ')
 item_slug = item_url.split('problems/')[1].replace('/', '')
 data = get_problem_by_slug(item_slug)
-item_no = data['questionFrontendId']
+item_no = data['questionFrontendId'].split(' ')[-1]
 item_name = data['translatedTitle']
 
 dir_path = item_no + item_name
@@ -70,11 +71,11 @@ for i in pic_list:
     print(f'下载图片 {pic_name} 到 {pic_path}')
     data['translatedContent'] = data['translatedContent'].replace(i, './' + pic_name)
 
+
 content = '# 题目\n\n## {0}\n\n### 来源:\n\n[力扣-{0}]({1})\n\n### 题目内容\n\n'.format(
     item_name, item_url)
 
 content += ht.html2text(data['translatedContent'])
-
 
 
 with open(dir_path + '/README.md', 'w', encoding='utf-8') as f:
@@ -83,5 +84,3 @@ with open(dir_path + '/README.md', 'w', encoding='utf-8') as f:
 with open(dir_path + '/' + item_url.split('/')[-2].replace('-', '') + '.py',
           'w', encoding='utf-8') as f:
     f.write('# ')
-
-input('press any key to continue ...')
