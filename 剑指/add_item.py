@@ -16,6 +16,7 @@ headers = {
 folder_name = '剑指'
 
 pic_pattern = re.compile('(https?://.+\.(?:png|jpg))')
+item_no_pattern = re.compile('(\d+)(?:-\s(.+))?')
 
 def get_problem_by_slug(slug):
     params = {'operationName': 'getQuestionDetail',
@@ -52,7 +53,11 @@ if not re.search(folder_name, os.getcwd()):
 item_url = input('请输入题目url: ')
 item_slug = item_url.split('problems/')[1].replace('/', '')
 data = get_problem_by_slug(item_slug)
-item_no = data['questionFrontendId'].split(' ')[-1]
+no_tmp = item_no_pattern.findall(data['questionFrontendId'])
+if no_tmp[0][1] == '':
+    item_no = no_tmp[0][0]
+else:
+    item_no = no_tmp[0][0] + '-' + str(no_tmp[0][1].count('I'))
 item_name = data['translatedTitle']
 
 dir_path = item_no + item_name
@@ -84,3 +89,5 @@ with open(dir_path + '/README.md', 'w', encoding='utf-8') as f:
 with open(dir_path + '/' + item_url.split('/')[-2].replace('-', '') + '.py',
           'w', encoding='utf-8') as f:
     f.write('# ')
+
+input('press any key to continue')

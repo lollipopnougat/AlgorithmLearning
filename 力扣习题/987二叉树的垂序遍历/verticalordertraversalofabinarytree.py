@@ -68,6 +68,10 @@ def check_tree(root:TreeNode):
             root.left = None
         if root.right and not root.right.val:
             root.right = None
+        if root.left:
+            check_tree(root.left)
+        if root.right:
+            check_tree(root.right)
 
 
 s = Solution()
