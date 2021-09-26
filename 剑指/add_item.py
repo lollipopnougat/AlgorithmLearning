@@ -16,7 +16,7 @@ headers = {
 folder_name = '剑指'
 
 pic_pattern = re.compile('(https?://.+\.(?:png|jpg))')
-item_no_pattern = re.compile('(\d+)(?:-\s(.+))?')
+item_no_pattern = re.compile('(\d+)(?:\s?-\s(.+))?')
 
 def get_problem_by_slug(slug):
     params = {'operationName': 'getQuestionDetail',
@@ -68,8 +68,9 @@ os.mkdir(dir_path)
 # get pic
 pic_list = pic_pattern.findall(data['translatedContent'])
 for i in pic_list:
-    tmp = session.get(i, headers=headers)
     pic_name = i.split('/')[-1]
+    print(f'正在下载图片 {pic_name} ...')
+    tmp = session.get(i, headers=headers)
     pic_path = dir_path + '/' + pic_name
     with open(pic_path, 'wb') as f:
         f.write(tmp.content)
