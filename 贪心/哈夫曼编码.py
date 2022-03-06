@@ -106,3 +106,10 @@ def trans_decode(string_s):
             answer += code_dict2[code]
             code = ""
     return answer
+
+res = frequent_char('accbbbffffeeeeedddddd')
+res2 = NodeQueue(res)
+tree = create_huffman_tree(res2)
+huffman_code_dict(tree, '')
+rr = trans_decode('111010101001001011110111100100100011101010111000011')
+print(rr)
