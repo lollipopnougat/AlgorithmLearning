@@ -3,8 +3,22 @@ import re
 import requests
 import json
 import html2text as ht
+import platform
 
-user_agent = r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78'
+proxy = {}
+usingProxy = False
+
+if platform.system() == 'Windows':
+    from utils import ProxyServer
+    parser = ProxyServer()
+    if parser.is_open_proxy_form_Win():
+        usingProxy = True
+        ip, port = parser.get_server_form_Win()
+        proxy['http'] = f'http://{ip}:{port}'
+        proxy['https'] = f'http://{ip}:{port}'
+
+
+user_agent = r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36 Edg/99.0.1150.30'
 session = requests.Session()
 leetcode_gql_url = 'https://leetcode-cn.com/graphql'
 headers = {
@@ -31,7 +45,7 @@ def get_problem_by_slug(slug):
 
     json_data = json.dumps(params).encode('utf8')
     headers['Referer'] = f'https://leetcode-cn.com/problems/{slug}'
-    resp = session.post(leetcode_gql_url, data = json_data, headers = headers, timeout = 10)
+    resp = session.post(leetcode_gql_url, data = json_data, headers = headers, timeout = 10, proxies=proxy)
     content = resp.json()
 
     # 题目详细信息
@@ -62,7 +76,7 @@ os.mkdir(dir_path)
 # get pic
 pic_list = pic_pattern.findall(data['translatedContent'])
 for i in pic_list:
-    tmp = session.get(i, headers=headers)
+    tmp = session.get(i, headers=headers, proxies=proxy)
     pic_name = i.split('/')[-1]
     pic_path = dir_path + '/' + pic_name
     with open(pic_path, 'wb') as f:
