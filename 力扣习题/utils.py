@@ -1,5 +1,6 @@
 import math
 import winreg
+from typing import List
 class Node:
     def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None, pre: 'Node' = None):
         self.val = int(x)
@@ -8,7 +9,7 @@ class Node:
         self.random = random
 
 class TreeNode:
-    def __init__(self, x):
+    def __init__(self, x = None):
         self.val = x
         self.left = None
         self.right = None
@@ -45,6 +46,44 @@ def build_tree(li:list) -> TreeNode:
         i += 1
     check_tree(root)
     return root
+
+def build_tree2(li: List[int]) -> TreeNode:
+    '''
+    完全层序构造二叉树
+    '''
+    l = len(li)
+    if l == 0:
+        return None
+    lt = [None] * l
+    lt[0] = TreeNode(li[0])
+    depth = math.floor(math.log(l, 2))
+    for i in range(1, l):
+        if li[i] != None:
+            lt[i] = TreeNode(li[i])
+            if i % 2 == 0:
+                lt[(i - 1) // 2].right = lt[i]
+            else:
+                lt[i // 2].left = lt[i]
+    return lt[0]
+
+def build_tree2(li: List[int]) -> TreeNode:
+    '''
+    半完全层序构造二叉树
+    '''
+    l = len(li)
+    if l == 0:
+        return None
+    lt = [None] * l
+    lt[0] = TreeNode(li[0])
+    depth = math.floor(math.log(l, 2))
+    for i in range(1, l):
+        if li[i] != None:
+            lt[i] = TreeNode(li[i])
+            if i % 2 == 0:
+                lt[(i - 1) // 2].right = lt[i]
+            else:
+                lt[i // 2].left = lt[i]
+    return lt[0]
 
 def build_list(li: list) -> Node:
     le = len(li)

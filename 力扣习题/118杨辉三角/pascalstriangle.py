@@ -1,8 +1,9 @@
+from typing import List
 class Solution:
     '''
     非递归算法
     '''
-    def generate(self, numRows: int) -> [[]]:
+    def generate(self, numRows: int) -> List[List[int]]:
         res = []
         if numRows == 1:
             res.append([1])
@@ -31,7 +32,7 @@ class Solution2:
     '''
     递归算法
     '''
-    def generate(self, numRows: int) -> [[]]:
+    def generate(self, numRows: int) -> List[List[int]]:
         if numRows == 0:
             return []
         elif numRows == 1:
@@ -56,7 +57,7 @@ class Solution3:
     '''
     满脑子骚操作
     '''
-    def generate(self, numRows: int) -> [[]]:
+    def generate(self, numRows: int) -> List[List[int]]:
         res = [
             [1],
             [1,1],
