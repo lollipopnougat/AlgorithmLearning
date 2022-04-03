@@ -83,7 +83,7 @@ class Solutionn:
                 cy += 1
         if pattern[0] == pattern[1]:
             cx += 1
-            return cx * (cx - 1) / 2
+            return cx * (cx - 1) // 2
         if cy > cx:
             dp[-1] += 1
         for i in range(l):
