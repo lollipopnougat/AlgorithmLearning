@@ -48,4 +48,5 @@ class Solution3:
     
 s = Solution3()
 
-print(s.countSubstrings('aaa'))
+print(s.countSubstrings('abcba'))
+print(s.countSubstrings('aaba'))

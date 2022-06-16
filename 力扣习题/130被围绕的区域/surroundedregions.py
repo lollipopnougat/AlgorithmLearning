@@ -3,33 +3,33 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
-        h = len(board)
-        if h == 0:
+        self.h = len(board)
+        if self.h == 0:
             return
-        w = len(board[0])
-        def dfs(i, j):
-            if i < 0 or j < 0 or i >= h or j >= w or board[i][j] != 'O':
-                return
-            board[i][j] = 'S'
-            dfs(i - 1, j)
-            dfs(i + 1, j)
-            dfs(i, j - 1)
-            dfs(i, j + 1)
-            
+        self.w = len(board[0])
 
-        for i in range(h):
-            dfs(i, 0)
-            dfs(i, w - 1)
-        for i in range(w):
-            dfs(0, i)
-            dfs(h - 1, i)
+        for i in range(self.h):
+            self.dfs(board, i, 0)
+            self.dfs(board, i, self.w - 1)
+        for i in range(self.w):
+            self.dfs(board, 0, i)
+            self.dfs(board, self.h - 1, i)
         
-        for i in range(h):
-            for j in range(w):
+        for i in range(self.h):
+            for j in range(self.w):
                 if board[i][j] == 'O':
                     board[i][j] = 'X'
                 if board[i][j] == 'S':
                     board[i][j] = 'O'
+
+    def dfs(self, board, i, j):
+        if i < 0 or j < 0 or i >= self.h or j >= self.w or board[i][j] != 'O':
+            return
+        board[i][j] = 'S'
+        self.dfs(board, i - 1, j)
+        self.dfs(board, i + 1, j)
+        self.dfs(board, i, j - 1)
+        self.dfs(board, i, j + 1)
 
 s = Solution()
 li = [

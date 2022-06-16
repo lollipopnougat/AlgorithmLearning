@@ -40,7 +40,7 @@
 
 ```py
 if i == 0 and j == 0:
-    c[i][j]=0
+    c[i][j] = 0
 elif i > 0 and j > 0 and x[i] == y[j]:
     c[i][j] = c[i - 1][j - 1] + 1
 elif i > 0 and j > 0 and x[i] != y[j]:
