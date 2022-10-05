@@ -15,3 +15,8 @@ class Solution:
         node.left = self.buildTree(inorder[0:ls],postorder[0:ls])
         node.right = self.buildTree(inorder[ls+1:],postorder[ls:-1])
         return node
+
+
+s = Solution()
+r = s.buildTree(['d','a','b','e','c'], ['d','e','b','a','c'])
+print(r)

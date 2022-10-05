@@ -59,8 +59,8 @@ def fisher_yates_shuffle(arr: list) -> list:
 ```py
 import random
 def knuth_durstenfeld_shuffle(arr: list):
-    for i in range(arr.size()-1, -1, -1):
-        tmp = random.randint(0, i + 1)
+    for i in range(len(arr.size) - 1, -1, -1):
+        tmp = random.randint(0, i)
         arr[tmp], arr[i] = arr[i], arr[tmp]
 
 ```
@@ -81,15 +81,15 @@ import random
 def shuffle(arr: list):
     leng = len(arr)
     for i in range(leng):
-        ra = random.randint(0, i + 1)
+        ra = random.randint(0, i)
         arr[i], arr[ra] = arr[ra], arr[i]
 
 # 开辟新空间
 def shuffle2(arr: list) -> list:
     leng = len(arr)
-    res = arr[::]
+    res = arr[:]
     for i in range(leng):
-        ra = random.randint(0, i + 1)
+        ra = random.randint(0, i)
         res[i], res[ra] =res[ra], res[i]
     return res
 

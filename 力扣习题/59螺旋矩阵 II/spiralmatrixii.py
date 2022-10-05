@@ -1,5 +1,5 @@
 from typing import List
-class Solution:
+class Solutionn:
     def generateMatrixm(self, n: int) -> List[List[int]]:
         '''
         枚举大法
@@ -65,20 +65,35 @@ class Solution:
             counts += 3 * (ed - t)
         return res
             
-
+class Solution:
+    def generateMatrix(self, n: int) -> List[List[int]]:
+        # dirs = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+        dirs = [(1, 0), (0, 1),  (-1, 0), (0, -1)]
+        matrix = [[0] * n for _ in range(n)]
+        row, col, dirIdx = 0, 0, 0
+        for i in range(n * n):
+            matrix[row][col] = i + 1
+            dx, dy = dirs[dirIdx]
+            r, c = row + dx, col + dy
+            if r < 0 or r >= n or c < 0 or c >= n or matrix[r][c] > 0:
+                dirIdx = (dirIdx + 1) % 4   # 顺时针旋转至下一个方向
+                dx, dy = dirs[dirIdx]
+            row, col = row + dx, col + dy
+        
+        return matrix
 
 s = Solution()
 
 #re3 = s.generateMatrixm(3)
-re1 = s.generateMatrixm(1)
-#re4 = s.generateMatrixm(4)
-re5 = s.generateMatrixm(5)
-re7 = s.generateMatrixm(7)
+re1 = s.generateMatrix(1)
+re4 = s.generateMatrix(4)
+re5 = s.generateMatrix(5)
+re7 = s.generateMatrix(7)
 
 
 #print(re3)
 #print(re4)
-print(re1)
+print(re4)
 
 
     
