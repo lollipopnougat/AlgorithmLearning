@@ -3,7 +3,7 @@ import json
 import datetime
 import  html2text as ht
 
-user_agent = r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.75'
+user_agent = r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.34'
 session = requests.Session()
 leetcode_gql_url = 'https://leetcode-cn.com/graphql'
 headers = {

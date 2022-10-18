@@ -18,7 +18,7 @@ if platform.system() == 'Windows':
         proxy['https'] = f'http://{ip}:{port}'
 
 
-user_agent = r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36 Edg/99.0.1150.30'
+user_agent = r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.34'
 session = requests.Session()
 leetcode_gql_url = 'https://leetcode-cn.com/graphql'
 headers = {
@@ -63,7 +63,7 @@ if not re.search(folder_name, os.getcwd()):
 # item_name = item_no.split('. ')[-1]
 # item_no = item_no.split('. ')[0]
 item_url = input('请输入题目url: ')
-item_slug = item_url.split('problems/')[1].replace('/', '')
+item_slug = item_url.split('problems/')[1].split('/')[0]
 data = get_problem_by_slug(item_slug)
 item_no = data['questionFrontendId']
 item_name = data['translatedTitle']
