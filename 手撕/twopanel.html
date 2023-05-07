@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>twoPanel</title>
+</head>
+<body>
+    <div class="p1 box">
+        <div class="right">root => display: flex; left => order: 0; width: 100px; right => order: 1; flex-grow: 1;</div>
+        <div class="left">flex</div>
+    </div>
+    <div class="p2 box">
+        <div class="left">float</div>
+        <div class="right">left => width: 100px; float: left; right => margin-left: 100px;</div>
+    </div>
+    <div class="p3 box">
+        <div class="left">grid</div>
+        <div class="right">root => display: grid; grid-template-columns: 100px auto;</div>
+    </div>
+    <div class="p4 box">
+        <div class="left">position</div>
+        <div class="right">root => position: relative; left => width: 100px; right => position: absolute; width: calc(100% - 100px); left: 100px; top: 0;</div>
+    </div>
+    <div class="p5 box">
+        <div class="left">float+BFC</div>
+        <div class="right">left => width: 100px; float: left; right => overflow: hidden;</div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+        .box {
+            background: #6dc5d6;
+            width: 100%;
+            height: 100px;
+            padding-bottom: 10px;
+            color: #333333;
+        }
+        .left {
+            background: #6d79d6;
+            height: 100%;
+            text-align: center;
+        }
+        .right {
+            background: #6dd684;
+            height: 100%;
+            text-align: center;
+        }
+        .p1 {
+            display: flex;
+        }
+        .p1 .left {
+            width: 100px;
+            order: 0;
+        }
+        .p1 .right {
+            flex-grow: 1;
+            order: 1;
+        }
+
+        .p2 .left {
+            width: 100px;
+            float: left;
+        }
+        .p2 .right {
+            margin-left: 100px;
+        }
+
+        .p3 {
+            display: grid;
+            grid-template-columns: 100px auto;
+        }
+
+        .p4 {
+            position: relative;
+        }
+
+        .p4 .left {
+            width: 100px;
+        }
+
+        .p4 .right {
+            position: absolute;
+            top: 0;
+            left: 100px;
+            width: calc(100% - 100px);
+            height: 100px;
+        }
+
+        .p5 .left {
+            width: 100px;
+            float: left;
+        }
+
+        .p5 .right {
+            overflow: hidden;
+        }
+
+    </style>
+</body>
+</html>

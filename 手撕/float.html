@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .box {
+            background: #6db8d6;
+            width: 100%;
+            color: #333333;
+            font-size: 0;
+        }
+        .box::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .left {
+            /* display: inline-block; */
+            background: #6d79d6;
+            height: 100px;
+            width: 200px;
+            text-align: center;
+            float: left;
+        }
+        .right {
+            /* display: inline-block; */
+            background: #70d66d;
+            height: 100px;
+            width: 200px;
+            text-align: center;
+            float: left;
+        }
+    </style>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

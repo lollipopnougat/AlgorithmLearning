@@ -62,7 +62,7 @@ class LRUCache {
             }
         }
         else {
-            let ok = this.order.shift().key;
+            let ok = this.order.shift()!.key;
             this.order[0].front = undefined;
             delete this.dict[ok];
             const node = new MNode(key);
