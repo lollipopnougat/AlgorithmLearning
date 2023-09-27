@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="el"></div>
+        <div class="el2"></div>
+    </div>
+    <style>
+        .box {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: chocolate;
+        }
+
+        .el {
+            display: block;
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: cadetblue;
+        }
+
+        .el2 {
+            display: block;
+            float: left;
+            width: 100px;
+            height: 80px;
+            background-color: aquamarine;
+        }
+
+        .box::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</body>
+
+</html>

@@ -25,7 +25,7 @@ export function counter() {
 }
 
 const count = counter();
-const dcount = throttle(count, 1000, false);
+const dcount = throttle(count, 1000, true);
 let timeout = setInterval(() => {
     dcount();
 }, 500);

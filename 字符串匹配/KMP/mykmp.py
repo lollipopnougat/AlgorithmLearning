@@ -64,6 +64,7 @@ def quick_kmp(t, p):
 
 
 print(get_next('ababcabc'))
+print(get_next('bccabcaac'))
 print(get_next('uefhiuefbeuifgbrygfecfge78fgABCDEdfbfbdddb'))
 print(mykmp_search('ababcababcabc', 'ababcabc'))
 print(quick_kmp('uefhiuefbeuifgbrygfecfge78fgABCDEdfbfbdddb', 'CDE'))

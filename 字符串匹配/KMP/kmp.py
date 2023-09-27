@@ -41,6 +41,8 @@ def simple_kmp(st, pa):
         if pa[j] == pa[i - 1]:
             j += 1
         next[i] = j
+    print('next')
+    print(next)
     j = 0
     # 比较
     for i in range(str_len):
@@ -54,6 +56,8 @@ def simple_kmp(st, pa):
     
 # 时间复杂度O(m + n)
 
+print(get_next('bccabcaac'))
+print(simple_kmp('uefhiuefbeuifgbrygfecfge78fgABCDEdfbfbdddb', 'bccabcaac'))
 print(get_next('gtgtgcf'))
 
 print(kmp_find('uefhiuefbeuifgbrygfecfge78fgABCDEdfbfbdddb', 'CDE'))
